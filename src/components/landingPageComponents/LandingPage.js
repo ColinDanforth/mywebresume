@@ -29,7 +29,7 @@ const wordCloudStyle = {
 const headerStyle = {
   whiteSpace: 'nowrap',
   overflow: 'hidden',
-  color: '#CFCFC',
+  color: '#CFCFCF',
   position: 'relative',
   fontSize: '2em',
 }
