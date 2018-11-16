@@ -2,13 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import wordCloud from '../images/myWordCloud.png'
 import profileImage from "../images/profileImage.JPG"
+import ReactResizeDetector from "react-resize-detector"
+
 
 const profileImageStyle = {
   position: 'relative',
   marginLeft: '2%',
-  maxWidth: '30%',
-  marginTop: '5%',
+  marginTop: '2%',
   marginBottom: '5%',
+  maxWidth: '30%',
   width: 'auto',
   height: 'auto',
   zIndex: '-1',
@@ -17,7 +19,7 @@ const profileImageStyle = {
 const wordCloudStyle = {
   position: 'relative',
   maxWidth: '60%',
-  marginTop: '5%',
+  marginTop: '2%',
   marginBottom: '5%',
   width: 'auto',
   height: 'auto',
@@ -70,6 +72,7 @@ class LandingPage extends React.Component{
         <h1 style={headerStyle}>Programmer, Administrator, Video Game Designer, and Much More</h1>
         <img style={profileImageStyle} src={profileImage} alt=''/>
         <img style={wordCloudStyle} src={wordCloud} alt=''/>
+        <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeSection1}/>
       </div>
     )
   }
@@ -79,4 +82,5 @@ export default LandingPage
 
 LandingPage.propTypes = {
   headerHeight: PropTypes.number,
+  onResizeSection1: PropTypes.func,
 }
