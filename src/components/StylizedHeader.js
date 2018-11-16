@@ -1,33 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import profileImage from "../images/profileImage.JPG"
 import menuIcon from '../images/menuIcon.png'
-import ReactResizeDetector from 'react-resize-detector'
 import SideMenuPanel from "./SideMenuPanel"
+import ReactResizeDetector from 'react-resize-detector'
 
 const menuBar = {
   position: 'fixed',
-  backgroundColor: '#89b5c9',
   top: '0px',
+  left: '0px',
   width: '100%',
   height: '40px',
+  backgroundColor: '#607d8a',
 }
 
 const menuIconStyle = {
-  position: 'fixed',
+  position: 'relative',
   left: '5px',
   top: '2px',
   width: '35px',
   height: '35px',
-}
-
-const profileImageStyle = {
-  position: 'fixed',
-  borderRadius: '100%',
-  right: '10px',
-  top: '10px',
-  width: '100px',
-  height: '150px',
 }
 
 const sideMenuPanelStyle ={
@@ -61,7 +52,6 @@ class StylizedHeader extends React.Component{
         <a style={menuIconStyle} href="#menu" onClick={this.openMenu}>
           <img style={menuIconStyle} src={menuIcon} alt=""/>
         </a>
-        <img style={profileImageStyle} src={profileImage} alt=''/>
         {this.state.openMenu ?
           (<div style={sideMenuPanelStyle}>
             <SideMenuPanel/>
@@ -69,7 +59,7 @@ class StylizedHeader extends React.Component{
           :
           (<div style={{'display': 'blocked'}}/>)
         }
-        <ReactResizeDetector handleWidth handleHeight onResize={this.props.onHeaderResize}/>
+        <ReactResizeDetector handleWidth handleHeight onResize={this.props.handleHeaderResize}/>
       </div>
     )
   }
@@ -78,5 +68,5 @@ class StylizedHeader extends React.Component{
 export default StylizedHeader
 
 StylizedHeader.propTypes = {
-  onHeaderResize: PropTypes.func,
+  handleHeaderResize: PropTypes.func,
 }

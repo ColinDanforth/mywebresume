@@ -1,44 +1,59 @@
 import React from 'react'
 import StylizedHeader from "./StylizedHeader"
+import LandingPage from "./LandingPage"
 
 const rootStyle = {
-  position: 'absolute',
+  position: 'relative',
   top: '0px',
   width: '100%',
-  textAlign: 'center',
-  backgroundColor: '#859ea6',
 }
 
 class RootPageItem extends React.Component{
   constructor(){
     super()
     this.state = {
-      phantomForHeader: {
-        display: 'block',
-        height: '50px'
-      }
+      headerHeight: 0,
+      block2Position: {
+        position: 'absolute',
+        top: '0px',
+      },
     }
 
+    this.landingPageResize = this.landingPageResize.bind(this)
     this.onHeaderResize = this.onHeaderResize.bind(this)
   }
 
   onHeaderResize(width, height){
     this.setState({
-      phantomForHeader: {
-        display: 'block',
-        height: height + 'px'
-      },
+      headerHeight: height,
     })
+
+  }
+
+  landingPageResize(width, height){
+    this.setState({
+      block2Position: {
+        position: this.state.block2Position.position,
+        top: height + 'px',
+      }
+    })
+
   }
 
   render(){
     return(
       <div style={rootStyle}>
-        <div style={this.state.phantomForHeader}/>
-        <StylizedHeader
-          onHeaderResize={this.onHeaderResize}
-        />
-        <p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p><p>jhas;hljgaf;</p>
+        <div>
+          <div>
+            <StylizedHeader
+              handleHeaderResize={this.onHeaderResize}
+            />
+            <LandingPage/>
+          </div>
+          <div>
+            <p>asdhga;lablngr</p>
+          </div>
+        </div>
       </div>
     )
   }
