@@ -7,6 +7,7 @@ const footerStyle = {
 }
 
 const textStyle = {
+  color: '#DDDDDD',
   fontSize: '0.8em',
   margin: '3px',
 }

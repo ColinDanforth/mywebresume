@@ -10,7 +10,7 @@ const menuBar = {
   left: '0px',
   width: '100%',
   height: 'auto',
-  backgroundColor: '#607d8a',
+  backgroundColor: '#324A5F',
 }
 
 const menuIconStyle = {
@@ -25,7 +25,7 @@ const sideMenuPanelStyle ={
   position: 'absolute',
   width: '20%',
   height: 'auto',
-  backgroundColor: '#607d8a',
+  backgroundColor: '#324A5F',
 }
 
 class StylizedHeader extends React.Component{

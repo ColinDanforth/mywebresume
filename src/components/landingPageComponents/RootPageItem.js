@@ -40,7 +40,7 @@ class RootPageItem extends React.Component{
         position: 'relative',
         top: (this.state.block2Height) + 'px',
         zIndex: '0',
-        backgroundColor: '#777777',
+        backgroundColor: '#222222',
       }
     )
   }

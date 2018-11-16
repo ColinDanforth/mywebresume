@@ -27,7 +27,9 @@ const wordCloudStyle = {
 }
 
 const headerStyle = {
-  color: '#FFFFFF',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  color: '#CFCFC',
   position: 'relative',
   fontSize: '2em',
 }
@@ -40,7 +42,7 @@ class LandingPage extends React.Component{
         position: 'absolute',
         top: '0px',
         textAlign: 'center',
-        backgroundColor: '#444444',
+        backgroundColor: '#1B2A41',
         width: '100%',
         height: 'auto',
         zIndex: '-2',
