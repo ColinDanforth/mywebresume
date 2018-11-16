@@ -5,11 +5,11 @@ import SideMenuPanel from "./SideMenuPanel"
 import ReactResizeDetector from 'react-resize-detector'
 
 const menuBar = {
-  position: 'fixed',
+  position: 'sticky',
   top: '0px',
   left: '0px',
   width: '100%',
-  height: '40px',
+  height: 'auto',
   backgroundColor: '#607d8a',
 }
 
@@ -23,8 +23,6 @@ const menuIconStyle = {
 
 const sideMenuPanelStyle ={
   position: 'fixed',
-  left: '0px',
-  top: '40px',
   width: '150px',
   height: '100%',
   backgroundColor: '#607d8a',
@@ -57,7 +55,7 @@ class StylizedHeader extends React.Component{
             <SideMenuPanel/>
           </div>)
           :
-          (<div style={{'display': 'blocked'}}/>)
+          (<div style={{'display': 'none'}}/>)
         }
         <ReactResizeDetector handleWidth handleHeight onResize={this.props.handleHeaderResize}/>
       </div>

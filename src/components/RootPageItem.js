@@ -2,10 +2,9 @@ import React from 'react'
 import StylizedHeader from "./StylizedHeader"
 import LandingPage from "./LandingPage"
 
-const rootStyle = {
-  position: 'relative',
-  top: '0px',
-  width: '100%',
+const rootPosition = {
+  position: 'flex',
+  top: '0px'
 }
 
 class RootPageItem extends React.Component{
@@ -42,18 +41,14 @@ class RootPageItem extends React.Component{
 
   render(){
     return(
-      <div style={rootStyle}>
-        <div>
-          <div>
+      <div style={rootPosition}>
             <StylizedHeader
               handleHeaderResize={this.onHeaderResize}
             />
-            <LandingPage/>
-          </div>
-          <div>
+            <LandingPage
+              headerHeight={this.state.headerHeight}
+            />
             <p>asdhga;lablngr</p>
-          </div>
-        </div>
       </div>
     )
   }
