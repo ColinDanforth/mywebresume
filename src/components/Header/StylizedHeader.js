@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import menuIcon from '../images/menuIcon.png'
+import menuIcon from '../../images/menuIcon.png'
 import SideMenuPanel from "./SideMenuPanel"
 import ReactResizeDetector from 'react-resize-detector'
 
@@ -22,9 +22,9 @@ const menuIconStyle = {
 }
 
 const sideMenuPanelStyle ={
-  position: 'fixed',
-  width: '150px',
-  height: '100%',
+  position: 'absolute',
+  width: '20%',
+  height: 'auto',
   backgroundColor: '#607d8a',
 }
 
@@ -51,9 +51,9 @@ class StylizedHeader extends React.Component{
           <img style={menuIconStyle} src={menuIcon} alt=""/>
         </a>
         {this.state.openMenu ?
-          (<div style={sideMenuPanelStyle}>
+          (
             <SideMenuPanel/>
-          </div>)
+          )
           :
           (<div style={{'display': 'none'}}/>)
         }

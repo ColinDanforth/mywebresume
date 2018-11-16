@@ -1,6 +1,7 @@
 import React from 'react'
-import StylizedHeader from "./StylizedHeader"
+import StylizedHeader from "../Header/StylizedHeader"
 import LandingPage from "./LandingPage"
+import Footer  from '../footer/Footer'
 
 const rootPosition = {
   position: 'flex',
@@ -37,7 +38,6 @@ class RootPageItem extends React.Component{
     return(
       {
         position: 'relative',
-        textAlign: 'center',
         top: (this.state.block2Height) + 'px',
         zIndex: '0',
         backgroundColor: '#777777',
@@ -58,13 +58,7 @@ class RootPageItem extends React.Component{
           />
         </div>
         <div style={this.block2Position()}>
-          <p>asdhga;lablngr</p>
-          <p>asdhga;lablngr</p>
-          <p>asdhga;lablngr</p>
-          <p>asdhga;lablngr</p>
-          <p>asdhga;lablngr</p>
-          <p>asdhga;lablngr</p>
-          <p>asdhga;lablngr</p>
+          <Footer/>
         </div>
       </div>
     )

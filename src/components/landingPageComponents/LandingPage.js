@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import wordCloud from '../images/myWordCloud.png'
-import profileImage from "../images/profileImage.JPG"
+import wordCloud from '../../images/myWordCloud.png'
+import profileImage from "../../images/profileImage.JPG"
 import ReactResizeDetector from "react-resize-detector"
 
 
