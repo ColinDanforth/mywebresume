@@ -26,7 +26,7 @@ const rightTextStyle = {
 const leftBlockStyle={
   position: 'relative',
   float: 'left',
-  width: '50%',
+  width: '48%',
   height: 'auto',
   marginRight: '2%',
 }
