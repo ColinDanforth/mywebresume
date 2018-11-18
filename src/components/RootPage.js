@@ -15,6 +15,7 @@ class RootPage extends React.Component{
     this.state = {
       headerHeight: 0,
       landingPageHeight: 0,
+      block2Height: 0,
       activeItem: '',
     }
 
@@ -22,6 +23,7 @@ class RootPage extends React.Component{
     this.pageControl = this.pageControl.bind(this)
     this.onHeaderResize = this.onHeaderResize.bind(this)
     this.onResizelandingPageBackground = this.onResizelandingPageBackground.bind(this)
+    this.onResizeBlock2 = this.onResizeBlock2.bind(this)
   }
 
   updateRootState(input){
@@ -43,8 +45,14 @@ class RootPage extends React.Component{
     })
   }
 
+  onResizeBlock2(width, height){
+    console.log('jack', height)
+    this.setState({
+      block2Height: height
+    })
+  }
+
   pageControl(){
-    console.log(this.state.activeItem)
     if(this.state.activeItem === 'resume'){
       return <Resume
         headerHeight={this.state.headerHeight}
@@ -55,6 +63,8 @@ class RootPage extends React.Component{
         headerHeight={this.state.headerHeight}
         jackOfAllPosition={this.state.landingPageHeight + this.state.headerHeight}
         onResizelandingPageBackground={this.onResizelandingPageBackground}
+        onResizeBlock2={this.onResizeBlock2}
+        block3Position={this.state.landingPageHeight + this.state.headerHeight + this.state.block2Height}
       />
     }
   }

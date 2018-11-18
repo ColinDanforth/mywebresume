@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import wordCloud from '../../images/myWordCloud.png'
 import profileImage from "../../images/profileImage.JPG"
-import jackOfAll from "../../images/jackofalltradesmyth.jpg"
 import ReactResizeDetector from "react-resize-detector"
 import LandingBlock2 from "./LandingBlock2"
 
@@ -63,65 +62,52 @@ class LandingPage extends React.Component{
         zIndex: '1',
       }
     }
-
-    this.updateStyleStates = this.updateStyleStates.bind(this)
-    this.onResizeATag = this.onResizeATag.bind(this)
   }
 
   componentDidUpdate(Props){
-    console.log('landing' ,parseInt(this.state.landingPageBackground.top, 10), Math.floor(this.props.headerHeight))
-    console.log('jack', parseInt(this.state.jackOfAllStyle.top, 10), Math.floor(this.props.jackOfAllPosition))
     if(
       parseInt(this.state.landingPageBackground.top, 10) !== Math.floor(this.props.headerHeight)
       || parseInt(this.state.jackOfAllStyle.top, 10) !== Math.floor(this.props.jackOfAllPosition)
+      || parseInt(this.state.block3.top, 10) !== Math.floor(this.props.block3Position)
     ){
-      let landingPageBackground = this.state.landingPageBackground.top
-      let jackOfAll = this.state.jackOfAllStyle.top
       if(parseInt(this.state.landingPageBackground.top, 10) !== Math.floor(this.props.headerHeight)){
-        landingPageBackground= Math.floor(this.props.headerHeight) + 'px'
+        const landingPageBackground = this.state.landingPageBackground
+        this.setState({
+          landingPageBackground: {
+            position: landingPageBackground.position,
+            top: Math.floor(this.props.headerHeight) + 'px',
+            textAlign: landingPageBackground.textAlign,
+            backgroundColor: landingPageBackground.backgroundColor,
+            width: landingPageBackground.width,
+            height: landingPageBackground.height,
+            zIndex: landingPageBackground.zIndex,
+          }
+        })
+      }if(parseInt(this.state.block3.top, 10) !== Math.floor(this.props.block3Position)){
+        const block3 = this.state.block3
+        this.setState({
+          block3:{
+            position: block3.position,
+            top: Math.floor(this.props.block3Position) + 'px',
+            width: block3.width,
+            height: block3.height,
+            zIndex: block3.zIndex,
+          }
+        })
       }
       if(parseInt(this.state.jackOfAllStyle.top, 10) !== Math.floor(this.props.jackOfAllPosition)){
-        jackOfAll = Math.floor(this.props.jackOfAllPosition) + 'px'
+        const jackOfAll = this.state.jackOfAllStyle
+        this.setState({
+          jackOfAllStyle: {
+            position: jackOfAll.position,
+            top: Math.floor(this.props.jackOfAllPosition) + 'px',
+            width: jackOfAll.width,
+            height: jackOfAll.height,
+            zIndex: jackOfAll.zIndex,
+          },
+        })
       }
-      this.updateStyleStates(landingPageBackground, jackOfAll)
     }
-  }
-
-  async updateStyleStates(landingPageBackgroundtop, jackOfAlltop){
-    const landingPageBackground = this.state.landingPageBackground
-    const jackOfAll = this.state.jackOfAllStyle
-    await this.setState({
-      landingPageBackground: {
-        position: landingPageBackground.position,
-        top: landingPageBackgroundtop,
-        textAlign: landingPageBackground.textAlign,
-        backgroundColor: landingPageBackground.backgroundColor,
-        width: landingPageBackground.width,
-        height: landingPageBackground.height,
-        zIndex: landingPageBackground.zIndex,
-      },
-      jackOfAllStyle: {
-        position: jackOfAll.position,
-        top: jackOfAlltop,
-        width: jackOfAll.width,
-        height: jackOfAll.height,
-        zIndex: jackOfAll.zIndex,
-      }
-    })
-  }
-
-  onResizeATag(width, height){
-    const block3 = this.state.block3
-    console.log('thisHeight', height, 'jackOfAll', this.state.jackOfAllStyle.top, 'block3', this.state.block3.top)
-    this.setState({
-      block3: {
-        position: block3.position,
-        top: height + parseInt(this.state.jackOfAllStyle.top, 10) + 'px',
-        width: block3.width,
-        height: block3.height,
-        zIndex: block3.zIndex,
-      }
-    })
   }
 
   render(){
@@ -136,7 +122,7 @@ class LandingPage extends React.Component{
         <LandingBlock2
           jackOfAllStyle={this.state.jackOfAllStyle}
           block3Style={this.state.block3}
-          onResizeATag={this.onResizeATag}
+          onResizeBlock2={this.props.onResizeBlock2}
         />
       </div>
     )
@@ -148,5 +134,9 @@ export default LandingPage
 LandingPage.propTypes = {
   headerHeight: PropTypes.number,
   onResizelandingPageBackground: PropTypes.func,
-  jackOfAllPosition: PropTypes.number
+  onResizeBlock2: PropTypes.func,
+  jackOfAllPosition: PropTypes.number,
+  block3Position: PropTypes.number,
+
+
 }

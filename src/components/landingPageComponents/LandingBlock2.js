@@ -12,7 +12,7 @@ class LandingBlock2 extends React.Component{
           <a href='https://medium.muz.li/the-myth-of-the-jack-of-all-trades-master-of-none-1eb28900e7d5' rel="noreferrer noopener" target='_blank'>
             <img style={this.props.jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
           </a>
-          <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeATag}/>
+          <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeBlock2}/>
         </div>
         <LandingBlock3
           block3Style={this.props.block3Style}
@@ -27,5 +27,5 @@ export default LandingBlock2
 LandingBlock2.propTypes = {
   jackOfAllStyle: PropTypes.object,
   block3Style: PropTypes.object,
-  onResizeATag: PropTypes.func,
+  onResizeBlock2: PropTypes.func,
 }
