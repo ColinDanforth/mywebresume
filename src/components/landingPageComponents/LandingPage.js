@@ -4,6 +4,7 @@ import wordCloud from '../../images/myWordCloud.png'
 import profileImage from "../../images/profileImage.JPG"
 import jackOfAll from "../../images/jackofalltradesmyth.jpg"
 import ReactResizeDetector from "react-resize-detector"
+import LandingBlock2 from "./LandingBlock2"
 
 const profileImageStyle = {
   position: 'relative',
@@ -34,15 +35,6 @@ const headerStyle = {
   fontSize: '2em',
 }
 
-const headerStyleMarginBottom = {
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  color: '#CFCFCF',
-  position: 'relative',
-  fontSize: '2em',
-  marginBottom: '2%',
-}
-
 class LandingPage extends React.Component{
   constructor(){
     super()
@@ -57,6 +49,13 @@ class LandingPage extends React.Component{
         zIndex: '-2',
       },
       jackOfAllStyle: {
+        position: 'relative',
+        top: '0px',
+        width: '100%',
+        height: 'auto',
+        zIndex: '-1',
+      },
+      block3:{
         position: 'absolute',
         top: '0px',
         width: '100%',
@@ -66,6 +65,7 @@ class LandingPage extends React.Component{
     }
 
     this.updateStyleStates = this.updateStyleStates.bind(this)
+    this.onResizeATag = this.onResizeATag.bind(this)
   }
 
   componentDidUpdate(Props){
@@ -110,21 +110,34 @@ class LandingPage extends React.Component{
     })
   }
 
+  onResizeATag(width, height){
+    const block3 = this.state.block3
+    console.log('thisHeight', height, 'jackOfAll', this.state.jackOfAllStyle.top, 'block3', this.state.block3.top)
+    this.setState({
+      block3: {
+        position: block3.position,
+        top: height + parseInt(this.state.jackOfAllStyle.top, 10) + 'px',
+        width: block3.width,
+        height: block3.height,
+        zIndex: block3.zIndex,
+      }
+    })
+  }
+
   render(){
     return(
       <div>
-        <div style={this.state.landingPageBackground}>
+        <div className="block1" style={this.state.landingPageBackground}>
           <h1 style={headerStyle}>Programmer, Administrator, Video Game Designer, and Much More</h1>
           <img style={profileImageStyle} src={profileImage} alt='profileImage'/>
           <img style={wordCloudStyle} src={wordCloud} alt='wordCloud'/>
-          <h1 style={headerStyleMarginBottom}>T Shaped Employees, Fungibility in work and life</h1>
           <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizelandingPageBackground}/>
         </div>
-        <div>
-          <a href='https://medium.muz.li/the-myth-of-the-jack-of-all-trades-master-of-none-1eb28900e7d5' target='_blank'>
-            <img style={this.state.jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
-          </a>
-        </div>
+        <LandingBlock2
+          jackOfAllStyle={this.state.jackOfAllStyle}
+          block3Style={this.state.block3}
+          onResizeATag={this.onResizeATag}
+        />
       </div>
     )
   }
