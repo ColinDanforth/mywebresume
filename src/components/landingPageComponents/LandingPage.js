@@ -9,7 +9,7 @@ const profileImageStyle = {
   position: 'relative',
   marginLeft: '2%',
   marginTop: '1%',
-  marginBottom: '5%',
+  marginBottom: '2%',
   maxWidth: '24%',
   width: 'auto',
   height: 'auto',
@@ -20,7 +20,7 @@ const wordCloudStyle = {
   position: 'relative',
   maxWidth: '50%',
   marginTop: '1%',
-  marginBottom: '5%',
+  marginBottom: '2%',
   width: 'auto',
   height: 'auto',
   zIndex: '-1',
@@ -34,11 +34,19 @@ const headerStyle = {
   fontSize: '2em',
 }
 
+const headerStyleMarginBottom = {
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  color: '#CFCFCF',
+  position: 'relative',
+  fontSize: '2em',
+  marginBottom: '2%',
+}
+
 class LandingPage extends React.Component{
   constructor(){
     super()
     this.state={
-      jackHeight: 0,
       landingPageBackground: {
         position: 'absolute',
         top: '0px',
@@ -53,11 +61,10 @@ class LandingPage extends React.Component{
         top: '0px',
         width: '100%',
         height: 'auto',
-        zIndex: '-5',
+        zIndex: '1',
       }
     }
 
-    // this.onResize = this.onResize.bind(this)
     this.updateStyleStates = this.updateStyleStates.bind(this)
   }
 
@@ -77,7 +84,6 @@ class LandingPage extends React.Component{
         jackOfAll = Math.floor(this.props.jackOfAllPosition) + 'px'
       }
       this.updateStyleStates(landingPageBackground, jackOfAll)
-        // .then(() => this.props.onResizeSection1(parseInt(this.state.landingPageBackground.top, 10) + parseInt(this.state.jackOfAllStyle.top, 10) + this.state.jackHeight))
     }
   }
 
@@ -104,13 +110,6 @@ class LandingPage extends React.Component{
     })
   }
 
-  // onResize(width, height){
-  //   console.log(height)
-  //   this.setState({
-  //     jackHeight: height
-  //   })
-  // }
-
   render(){
     return(
       <div>
@@ -118,11 +117,13 @@ class LandingPage extends React.Component{
           <h1 style={headerStyle}>Programmer, Administrator, Video Game Designer, and Much More</h1>
           <img style={profileImageStyle} src={profileImage} alt='profileImage'/>
           <img style={wordCloudStyle} src={wordCloud} alt='wordCloud'/>
+          <h1 style={headerStyleMarginBottom}>T Shaped Employees, Fungibility in work and life</h1>
           <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizelandingPageBackground}/>
         </div>
         <div>
-          <img style={this.state.jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
-          {/*<ReactResizeDetector handleWidth handleHeight onResize={this.onResize}/>*/}
+          <a href='https://medium.muz.li/the-myth-of-the-jack-of-all-trades-master-of-none-1eb28900e7d5' target='_blank'>
+            <img style={this.state.jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
+          </a>
         </div>
       </div>
     )
@@ -133,7 +134,6 @@ export default LandingPage
 
 LandingPage.propTypes = {
   headerHeight: PropTypes.number,
-  onResizeSection1: PropTypes.func,
   onResizelandingPageBackground: PropTypes.func,
   jackOfAllPosition: PropTypes.number
 }

@@ -14,7 +14,6 @@ class RootPage extends React.Component{
     super()
     this.state = {
       headerHeight: 0,
-      block2Height: 0,
       landingPageHeight: 0,
       activeItem: '',
     }
@@ -22,9 +21,7 @@ class RootPage extends React.Component{
     this.updateRootState = this.updateRootState.bind(this)
     this.pageControl = this.pageControl.bind(this)
     this.onHeaderResize = this.onHeaderResize.bind(this)
-    // this.onResizeSection1 = this.onResizeSection1.bind(this)
     this.onResizelandingPageBackground = this.onResizelandingPageBackground.bind(this)
-    // this.block2Position = this.block2Position.bind(this)
   }
 
   updateRootState(input){
@@ -40,28 +37,11 @@ class RootPage extends React.Component{
 
   }
 
-  // onResizeSection1(height){
-  //   this.setState({
-  //     block2Height: height,
-  //   })
-  // }
-
   onResizelandingPageBackground(width, height){
     this.setState({
       landingPageHeight: height,
     })
   }
-
-  // block2Position(){
-  //   return(
-  //     {
-  //       position: 'relative',
-  //       top: (this.state.block2Height) + 'px',
-  //       zIndex: '0',
-  //       backgroundColor: '#222222',
-  //     }
-  //   )
-  // }
 
   pageControl(){
     console.log(this.state.activeItem)
@@ -73,8 +53,7 @@ class RootPage extends React.Component{
     } else {
       return <LandingPage
         headerHeight={this.state.headerHeight}
-        jackOfAllPosition={this.state.landingPageHeight}
-        onResizeSection1={this.onResizeSection1}
+        jackOfAllPosition={this.state.landingPageHeight + this.state.headerHeight}
         onResizelandingPageBackground={this.onResizelandingPageBackground}
       />
     }
