@@ -18,10 +18,9 @@ const profileImageStyle = {
 
 const wordCloudStyle = {
   position: 'relative',
-  maxWidth: '50%',
   marginTop: '1%',
   marginBottom: '2%',
-  width: 'auto',
+  width: '50%',
   height: 'auto',
   zIndex: '-1',
 }
@@ -56,6 +55,8 @@ class LandingPage extends React.Component{
       },
       block3:{
         position: 'absolute',
+        backgroundColor: '#324A5F',
+        textAlign: 'center',
         top: '0px',
         width: '100%',
         height: 'auto',
@@ -66,16 +67,16 @@ class LandingPage extends React.Component{
 
   componentDidUpdate(Props){
     if(
-      parseInt(this.state.landingPageBackground.top, 10) !== Math.floor(this.props.headerHeight)
-      || parseInt(this.state.jackOfAllStyle.top, 10) !== Math.floor(this.props.jackOfAllPosition)
-      || parseInt(this.state.block3.top, 10) !== Math.floor(this.props.block3Position)
+      parseFloat(this.state.landingPageBackground.top, 10) !== (this.props.headerHeight)
+      || parseFloat(this.state.jackOfAllStyle.top, 10) !== (this.props.jackOfAllPosition)
+      || parseFloat(this.state.block3.top, 10) !== (this.props.block3Position)
     ){
-      if(parseInt(this.state.landingPageBackground.top, 10) !== Math.floor(this.props.headerHeight)){
+      if(parseFloat(this.state.landingPageBackground.top, 10) !== (this.props.headerHeight)){
         const landingPageBackground = this.state.landingPageBackground
         this.setState({
           landingPageBackground: {
             position: landingPageBackground.position,
-            top: Math.floor(this.props.headerHeight) + 'px',
+            top: (this.props.headerHeight) + 'px',
             textAlign: landingPageBackground.textAlign,
             backgroundColor: landingPageBackground.backgroundColor,
             width: landingPageBackground.width,
@@ -83,24 +84,26 @@ class LandingPage extends React.Component{
             zIndex: landingPageBackground.zIndex,
           }
         })
-      }if(parseInt(this.state.block3.top, 10) !== Math.floor(this.props.block3Position)){
+      }if(parseFloat(this.state.block3.top, 10) !== this.props.block3Position){
         const block3 = this.state.block3
         this.setState({
           block3:{
             position: block3.position,
-            top: Math.floor(this.props.block3Position) + 'px',
+            backgroundColor: block3.backgroundColor,
+            top: this.props.block3Position + 'px',
+            textAlign: block3.textAlign,
             width: block3.width,
             height: block3.height,
             zIndex: block3.zIndex,
           }
         })
       }
-      if(parseInt(this.state.jackOfAllStyle.top, 10) !== Math.floor(this.props.jackOfAllPosition)){
+      if(parseFloat(this.state.jackOfAllStyle.top, 10) !== (this.props.jackOfAllPosition)){
         const jackOfAll = this.state.jackOfAllStyle
         this.setState({
           jackOfAllStyle: {
             position: jackOfAll.position,
-            top: Math.floor(this.props.jackOfAllPosition) + 'px',
+            top: (this.props.jackOfAllPosition) + 'px',
             width: jackOfAll.width,
             height: jackOfAll.height,
             zIndex: jackOfAll.zIndex,
@@ -123,6 +126,7 @@ class LandingPage extends React.Component{
           jackOfAllStyle={this.state.jackOfAllStyle}
           block3Style={this.state.block3}
           onResizeBlock2={this.props.onResizeBlock2}
+          phantomFooter={this.props.phantomFooter}
         />
       </div>
     )
@@ -137,6 +141,5 @@ LandingPage.propTypes = {
   onResizeBlock2: PropTypes.func,
   jackOfAllPosition: PropTypes.number,
   block3Position: PropTypes.number,
-
-
+  phantomFooter: PropTypes.object,
 }

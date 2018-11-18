@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactResizeDetector from "react-resize-detector"
+import PropTypes from 'prop-types'
 
 const footerStyle = {
   position: 'fixed',
@@ -39,17 +41,26 @@ const rightBlockStyle={
   marginLeft: '2%',
 }
 
-export default Footer => {
-  return (
-    <div style={footerStyle}>
-      <div style={leftBlockStyle}>
-        <a style={leftTextStyle} href="mailto:colin.danforth@gmail.com?Subject=Subject" target="_newtab">colin.canforth@gmail.com</a>
-        <p style={leftTextStyle}>Email Contact:</p>
+class Footer extends React.Component{
+  render(){
+    return (
+      <div style={footerStyle}>
+        <div style={leftBlockStyle}>
+          <a style={leftTextStyle} href="mailto:colin.danforth@gmail.com?Subject=Subject" target="_newtab">colin.canforth@gmail.com</a>
+          <p style={leftTextStyle}>Email Contact:</p>
+        </div>
+        <div style={rightBlockStyle}>
+          <p style={rightTextStyle}>Phone Contact:</p>
+          <p style={rightTextStyle}>416-388-4294</p>
+        </div>
+        <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeFooterHeight}/>
       </div>
-      <div style={rightBlockStyle}>
-        <p style={rightTextStyle}>Phone Contact:</p>
-        <p style={rightTextStyle}>416-388-4294</p>
-      </div>
-    </div>
-  )
+    )
+  }
+}
+
+export default Footer
+
+Footer.propTypes={
+  onResizeFooterHeight: PropTypes.func,
 }

@@ -17,11 +17,18 @@ class RootPage extends React.Component{
       landingPageHeight: 0,
       block2Height: 0,
       activeItem: '',
+      footerPhantom: {
+        position: 'relative',
+        bottom: '0px',
+        display: 'block',
+        height: '0px'
+      },
     }
 
     this.updateRootState = this.updateRootState.bind(this)
     this.pageControl = this.pageControl.bind(this)
     this.onHeaderResize = this.onHeaderResize.bind(this)
+    this.onResizeFooterHeight = this.onResizeFooterHeight.bind(this)
     this.onResizelandingPageBackground = this.onResizelandingPageBackground.bind(this)
     this.onResizeBlock2 = this.onResizeBlock2.bind(this)
   }
@@ -48,7 +55,16 @@ class RootPage extends React.Component{
   onResizeBlock2(width, height){
     console.log('jack', height)
     this.setState({
-      block2Height: height
+      block2Height: (height - (height* 0.02))
+    })
+  }
+
+  onResizeFooterHeight(width, height){
+    this.setState({
+      footerPhantom: {
+        display:'block',
+        height: height + 'px',
+      },
     })
   }
 
@@ -65,6 +81,7 @@ class RootPage extends React.Component{
         onResizelandingPageBackground={this.onResizelandingPageBackground}
         onResizeBlock2={this.onResizeBlock2}
         block3Position={this.state.landingPageHeight + this.state.headerHeight + this.state.block2Height}
+        phantomFooter={this.state.footerPhantom}
       />
     }
   }
@@ -80,7 +97,9 @@ class RootPage extends React.Component{
           />
           {this.pageControl()}
         </div>
-        <Footer/>
+        <Footer
+          onResizeFooterHeight={this.onResizeFooterHeight}
+        />
       </div>
     )
   }
