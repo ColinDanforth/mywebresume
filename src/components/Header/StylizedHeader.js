@@ -61,6 +61,9 @@ class StylizedHeader extends React.Component{
       value: event.currentTarget.dataset.id
     }
     this.props.updateRootState(newPage)
+    if(this.state.openMenu) {
+      this.openMenu()
+    }
   }
 
   render(){
@@ -82,6 +85,7 @@ class StylizedHeader extends React.Component{
             <SideMenuPanel
               navigatePages={this.navigatePages}
               activeItem={this.props.activeItem}
+              openMenu={this.openMenu}
             />
           )
           :

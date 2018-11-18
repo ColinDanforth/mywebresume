@@ -15,14 +15,16 @@ class RootPage extends React.Component{
     this.state = {
       headerHeight: 0,
       block2Height: 0,
+      landingPageHeight: 0,
       activeItem: '',
     }
 
     this.updateRootState = this.updateRootState.bind(this)
     this.pageControl = this.pageControl.bind(this)
     this.onHeaderResize = this.onHeaderResize.bind(this)
-    this.onResizeSection1 = this.onResizeSection1.bind(this)
-    this.block2Position = this.block2Position.bind(this)
+    // this.onResizeSection1 = this.onResizeSection1.bind(this)
+    this.onResizelandingPageBackground = this.onResizelandingPageBackground.bind(this)
+    // this.block2Position = this.block2Position.bind(this)
   }
 
   updateRootState(input){
@@ -38,22 +40,28 @@ class RootPage extends React.Component{
 
   }
 
-  onResizeSection1(width, height){
+  // onResizeSection1(height){
+  //   this.setState({
+  //     block2Height: height,
+  //   })
+  // }
+
+  onResizelandingPageBackground(width, height){
     this.setState({
-      block2Height: height,
+      landingPageHeight: height,
     })
   }
 
-  block2Position(){
-    return(
-      {
-        position: 'relative',
-        top: (this.state.block2Height) + 'px',
-        zIndex: '0',
-        backgroundColor: '#222222',
-      }
-    )
-  }
+  // block2Position(){
+  //   return(
+  //     {
+  //       position: 'relative',
+  //       top: (this.state.block2Height) + 'px',
+  //       zIndex: '0',
+  //       backgroundColor: '#222222',
+  //     }
+  //   )
+  // }
 
   pageControl(){
     console.log(this.state.activeItem)
@@ -65,7 +73,9 @@ class RootPage extends React.Component{
     } else {
       return <LandingPage
         headerHeight={this.state.headerHeight}
+        jackOfAllPosition={this.state.landingPageHeight}
         onResizeSection1={this.onResizeSection1}
+        onResizelandingPageBackground={this.onResizelandingPageBackground}
       />
     }
   }
@@ -81,9 +91,7 @@ class RootPage extends React.Component{
           />
           {this.pageControl()}
         </div>
-        <div style={this.block2Position()}>
-          <Footer/>
-        </div>
+        <Footer/>
       </div>
     )
   }
