@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const initialLinkPosition = {
-  color: '#000000',
+  color: '#CFCFCF',
   position: 'relative',
   float: 'left',
   margin: '10px',
 }
 
 const linkPosition = {
+  color: '#CFCFCF',
   position: 'relative',
   float: 'left',
   margin: '10px',

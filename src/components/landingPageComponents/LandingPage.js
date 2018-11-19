@@ -127,6 +127,7 @@ class LandingPage extends React.Component{
           block3Style={this.state.block3}
           onResizeBlock2={this.props.onResizeBlock2}
           phantomFooter={this.props.phantomFooter}
+          updateRootState={this.props.updateRootState}
         />
       </div>
     )
@@ -142,4 +143,5 @@ LandingPage.propTypes = {
   jackOfAllPosition: PropTypes.number,
   block3Position: PropTypes.number,
   phantomFooter: PropTypes.object,
+  updateRootState: PropTypes.func,
 }

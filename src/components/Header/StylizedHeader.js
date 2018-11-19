@@ -21,7 +21,7 @@ const menuIconStyle = {
 }
 
 const h2Style={
-  color: '#000000',
+  color: '#CFCFCF',
   position: 'fixed',
   transform: 'translate(0, -30%)',
   fontSize: '1.2em',
@@ -32,6 +32,7 @@ const h2Style={
 const h3Style={
   position: 'fixed',
   fontSize: '0.9em',
+  color: '#CFCFCF',
   transform: 'translate(0, 0%)',
   top: '0',
   left: '25%',

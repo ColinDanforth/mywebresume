@@ -82,6 +82,7 @@ class RootPage extends React.Component{
         onResizeBlock2={this.onResizeBlock2}
         block3Position={this.state.landingPageHeight + this.state.headerHeight + this.state.block2Height}
         phantomFooter={this.state.footerPhantom}
+        updateRootState={this.updateRootState}
       />
     }
   }

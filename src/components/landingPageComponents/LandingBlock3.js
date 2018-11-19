@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ActivityLinks from "./ActivityLinks"
+import activitiesList from './ListOfActivities'
 
 const headerStyleMargin = {
   whiteSpace: 'nowrap',
@@ -23,6 +25,25 @@ const pStyle = {
 }
 
 class LandingBlock3 extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      internalWrappingDivStyle:{
+        height: '100%'
+      }
+    }
+
+    this.onResize = this.onResize.bind(this)
+  }
+
+  onResize(width, height){
+    this.setState({
+      internalWrappingDivStyle: {
+        height: (height + 10) + 'px'
+      }
+    })
+  }
+
   render(){
     return(
       <div  style={this.props.block3Style} className="block3">
@@ -39,6 +60,11 @@ class LandingBlock3 extends React.Component{
           that I've either earned some form of recognition for, or earn my living with. Follow the links to learn more
           about my experience in each.
         </p>
+        {activitiesList.map(activity =>
+          <ActivityLinks
+            activityObject={activity}
+          />
+        )}
         <div style={this.props.phantomFooter}/>
       </div>
     )
@@ -50,4 +76,5 @@ export default LandingBlock3
 LandingBlock3.propTypes = {
   block3Style: PropTypes.object,
   phantomFooter: PropTypes.object,
+  updateRootState: PropTypes.func,
 }

@@ -17,6 +17,7 @@ class LandingBlock2 extends React.Component{
         <LandingBlock3
           block3Style={this.props.block3Style}
           phantomFooter={this.props.phantomFooter}
+          updateRootState={this.props.updateRootState}
         />
       </div>
     )
@@ -30,4 +31,5 @@ LandingBlock2.propTypes = {
   block3Style: PropTypes.object,
   onResizeBlock2: PropTypes.func,
   phantomFooter: PropTypes.object,
+  updateRootState: PropTypes.func,
 }
