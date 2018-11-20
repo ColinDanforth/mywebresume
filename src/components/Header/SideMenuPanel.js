@@ -1,24 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const rootDiv = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+}
+
 const initialLinkPosition = {
   color: '#CFCFCF',
-  position: 'relative',
-  float: 'left',
   margin: '10px',
 }
 
 const linkPosition = {
   color: '#CFCFCF',
   position: 'relative',
-  float: 'left',
   margin: '10px',
 }
 
 class SideMenuPanel extends React.Component{
   render(){
     return(
-      <div>
+      <div style={rootDiv}>
         <a
           href='#resume'
           style={initialLinkPosition}

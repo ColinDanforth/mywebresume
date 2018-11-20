@@ -11,31 +11,42 @@ const menuBar = {
   width: '100%',
   height: 'auto',
   backgroundColor: '#324A5F',
+  zIndex: '20',
+}
+
+const firstRow ={
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+}
+
+const menuIconAStyle={
+  marginRight: '20%',
+  maxWidth: '3.4%',
+  width: 'auto',
+  height: 'auto',
 }
 
 const menuIconStyle = {
-  position: 'relative',
-  margin: '2px',
-  width: '2.5%',
+  maxWidth: '100%',
+  width: 'auto',
   height: 'auto',
 }
 
 const h2Style={
   color: '#CFCFCF',
-  position: 'fixed',
-  transform: 'translate(0, -30%)',
-  fontSize: '1.2em',
-  top: '0',
-  left: '10%',
+  marginRight: '10%',
+  textAlign: 'left',
+  textDecoration: 'none',
+  fontSize: '0.8em',
 }
 
 const h3Style={
-  position: 'fixed',
   fontSize: '0.9em',
+  // marginRight: '2%',
+  textAlign: 'left',
   color: '#CFCFCF',
-  transform: 'translate(0, 0%)',
-  top: '0',
-  left: '25%',
 }
 
 class StylizedHeader extends React.Component{
@@ -70,24 +81,29 @@ class StylizedHeader extends React.Component{
   render(){
     return(
       <div style={menuBar}>
-        <a style={menuIconStyle} href="#menu" onClick={this.openMenu}>
-          <img style={menuIconStyle} src={menuIcon} alt=""/>
-        </a>
-        <a href='#resume'
-           data-id=""
-           onClick={this.navigatePages}
-        >
-          <h2 style={h2Style}>COLIN DANFORTH</h2>
-        </a>
-        <h3 style={h3Style}>Software Developer, Dev Ops, Game Design, Music Instructor, Martial Arts Instructor</h3>
-
-          {this.state.openMenu ?
+        <div style={firstRow}>
+          <a style={menuIconAStyle} href="#menu" onClick={this.openMenu}>
+            <img style={menuIconStyle} src={menuIcon} alt=""/>
+          </a>
+          <a
+            style={h2Style}
+            href='#resume'
+            data-id=""
+            onClick={this.navigatePages}
+          >
+            <h2>COLIN DANFORTH</h2>
+          </a>
+          <h3 style={h3Style}>Software Developer, Dev Ops, Game Design, Music Instructor, Martial Arts Instructor</h3>
+        </div>
+        {this.state.openMenu ?
           (
-            <SideMenuPanel
-              navigatePages={this.navigatePages}
-              activeItem={this.props.activeItem}
-              openMenu={this.openMenu}
-            />
+            <div >
+              <SideMenuPanel
+                navigatePages={this.navigatePages}
+                activeItem={this.props.activeItem}
+                openMenu={this.openMenu}
+              />
+            </div>
           )
           :
           (<div style={{'display': 'none'}}/>)

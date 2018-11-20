@@ -55,7 +55,7 @@ class LandingPage extends React.Component{
       },
       block3:{
         position: 'absolute',
-        backgroundColor: '#324A5F',
+        backgroundColor: '#222D35',
         textAlign: 'center',
         top: '0px',
         width: '100%',

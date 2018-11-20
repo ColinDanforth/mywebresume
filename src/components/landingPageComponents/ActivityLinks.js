@@ -4,32 +4,37 @@ import PropTypes from 'prop-types'
 const rootDiv = {
   display: 'flex',
   alignItems: 'flex-start',
-  width: '100%',
+  marginLeft: '20%',
+  marginRight: '20%',
+  marginTop: '2%',
+  marginBottom: '2%',
+  width: '60%',
+  backgroundColor: '#384249',
 }
 
 const imgStyle = {
   position: 'relative',
-  left: '20%',
   marginTop: '1%',
   marginBottom: '1%',
-  maxWidth: '12%',
+  marginLeft: '1%',
+  maxWidth: '14%',
   width: 'auto',
   height: 'auto',
 }
 
 const textDiv = {
   position: 'relative',
-  left: '22%',
+  left: '2%',
 }
 
 const aStyle = {
   position: 'relative',
-  textDecoration: 'none'
+  textDecoration: 'none',
 }
 
 const h1style = {
   position: 'relative',
-  textAlign: 'left',
+  textAlign: 'center',
   color: '#CFCFCF',
 }
 
@@ -56,20 +61,20 @@ class ActivityLinks extends React.Component{
 
   render(){
     return(
-      <div style={rootDiv}>
-        <img style={imgStyle} src={this.props.activityObject.img}/>
-        <div style={textDiv}>
-          <a
-            href='#..'
-            data-id={this.props.activityObject.pageName}
-            onClick={this.navigatePages}
-            style={aStyle}
-          >
+      <a
+        href={this.props.activityObject.link}
+        data-id={this.props.activityObject.pageName}
+        onClick={this.navigatePages}
+        style={aStyle}
+      >
+        <div style={rootDiv}>
+          <img style={imgStyle} src={this.props.activityObject.img}/>
+          <div style={textDiv}>
             <h1 style={h1style}>{this.props.activityObject.title}</h1>
-          </a>
-          <p style={rootText}>{this.props.activityObject.rootText}</p>
+            <p style={rootText}>{this.props.activityObject.rootText}</p>
+          </div>
         </div>
-      </div>
+      </a>
     )
   }
 }
