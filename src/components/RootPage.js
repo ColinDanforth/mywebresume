@@ -14,11 +14,16 @@ class RootPage extends React.Component{
   constructor(){
     super()
     this.state = {
-      headerHeight: 0,
+      phantomHeader: {
+        position: 'relative',
+        top: '0px',
+        display: 'block',
+        height: '0px'
+      },
       landingPageHeight: 0,
       block2Height: 0,
       activeItem: '',
-      footerPhantom: {
+      phantomFooter: {
         position: 'relative',
         bottom: '0px',
         display: 'block',
@@ -26,67 +31,33 @@ class RootPage extends React.Component{
       },
     }
 
-    this.updateRootState = this.updateRootState.bind(this)
-    this.pageControl = this.pageControl.bind(this)
-    this.onResizelandingPageBackground = this.onResizelandingPageBackground.bind(this)
-    this.onResizeBlock2 = this.onResizeBlock2.bind(this)
     this.onHeaderResize = this.onHeaderResize.bind(this)
     this.onResizeFooterHeight = this.onResizeFooterHeight.bind(this)
   }
 
   onHeaderResize(width, height){
+    const phantomHeader = this.state.phantomHeader
     this.setState({
-      headerHeight: height,
+      phantomHeader:{
+        position: phantomHeader.position,
+        top: phantomHeader.top,
+        display: phantomHeader.display,
+        height: height + 'px',
+      }
     })
 
   }
 
   onResizeFooterHeight(width, height){
+    const phantomFooter = this.state.phantomFooter
     this.setState({
-      footerPhantom: {
-        display:'block',
+      phantomFooter: {
+        position: phantomFooter.position,
+        bottom: phantomFooter.bottom,
+        display: phantomFooter.display,
         height: height + 'px',
       },
     })
-  }
-
-
-  updateRootState(input){
-    this.setState({
-      [input.name]: input.value,
-    })
-  }
-
-  onResizelandingPageBackground(width, height){
-    this.setState({
-      landingPageHeight: height,
-    })
-  }
-
-  onResizeBlock2(width, height){
-    console.log('jack', height)
-    this.setState({
-      block2Height: (height - (height* 0.02))
-    })
-  }
-
-  pageControl(){
-    if(this.state.activeItem === 'resume'){
-      return <Resume
-        headerHeight={this.state.headerHeight}
-        onResizeSection1={this.onResizeSection1}
-      />
-    } else {
-      return <LandingPage
-        headerHeight={this.state.headerHeight}
-        jackOfAllPosition={this.state.landingPageHeight + this.state.headerHeight}
-        onResizelandingPageBackground={this.onResizelandingPageBackground}
-        onResizeBlock2={this.onResizeBlock2}
-        block3Position={this.state.landingPageHeight + this.state.headerHeight + this.state.block2Height}
-        phantomFooter={this.state.footerPhantom}
-        updateRootState={this.updateRootState}
-      />
-    }
   }
 
   render(){
@@ -98,27 +69,16 @@ class RootPage extends React.Component{
             onHeaderResize={this.onHeaderResize}
             activeItem={this.activeItem}
           />
+          <div style={this.state.phantomHeader}/>
           <Switch>
-            <Route exact path='/' component={() => <LandingPage
-              headerHeight={this.state.headerHeight}
-              jackOfAllPosition={this.state.landingPageHeight + this.state.headerHeight}
-              onResizelandingPageBackground={this.onResizelandingPageBackground}
-              onResizeBlock2={this.onResizeBlock2}
-              block3Position={this.state.landingPageHeight + this.state.headerHeight + this.state.block2Height}
-              phantomFooter={this.state.footerPhantom}
-              updateRootState={this.updateRootState}
-            />
-            }/>
-            <Route path='/resume' component={() => <Resume
-              headerHeight={this.state.headerHeight}
-              onResizeSection1={this.onResizeSection1}
-            />
-            }/>
+            <Route exact path='/' component={LandingPage}/>
+            <Route path='/resume' component={Resume }/>
           </Switch>
         </div>
         <Footer
           onResizeFooterHeight={this.onResizeFooterHeight}
         />
+        <div style={this.state.phantomFooter}/>
       </div>
     )
   }

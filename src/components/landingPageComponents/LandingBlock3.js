@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ActivityLinks from "./ActivityLinks"
 import activitiesList from './ListOfActivities'
 
@@ -7,6 +6,14 @@ const flexRootDiv = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+}
+
+const block3Style ={
+  backgroundColor: '#222D35',
+  textAlign: 'center',
+  width: '100%',
+  height: 'auto',
+  zIndex: '1',
 }
 
 const headerStyleMargin = {
@@ -50,7 +57,7 @@ class LandingBlock3 extends React.Component{
 
   render(){
     return(
-      <div  style={this.props.block3Style} className="block3">
+      <div  style={block3Style} className="block3">
         <div style={flexRootDiv}>
           <h1 style={headerStyleMargin}>Fungibility in Work and Life: T Shaped People</h1>
           <p style={pStyle}>
@@ -74,16 +81,9 @@ class LandingBlock3 extends React.Component{
             )}
           </div>
         </div>
-        <div style={this.props.phantomFooter}/>
       </div>
     )
   }
 }
 
 export default LandingBlock3
-
-LandingBlock3.propTypes = {
-  block3Style: PropTypes.object,
-  phantomFooter: PropTypes.object,
-  updateRootState: PropTypes.func,
-}

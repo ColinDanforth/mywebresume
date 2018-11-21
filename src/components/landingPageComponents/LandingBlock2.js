@@ -1,8 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import jackOfAll from "../../images/jackofalltradesmyth.jpg"
-import ReactResizeDetector from "react-resize-detector"
-import LandingBlock3 from "./LandingBlock3"
+// import ReactResizeDetector from "react-resize-detector"
+
+const jackOfAllStyle = {
+  width: '100%',
+}
 
 class LandingBlock2 extends React.Component{
   render(){
@@ -10,26 +13,12 @@ class LandingBlock2 extends React.Component{
       <div>
         <div>
           <a href='https://medium.muz.li/the-myth-of-the-jack-of-all-trades-master-of-none-1eb28900e7d5' rel="noreferrer noopener" target='_blank'>
-            <img style={this.props.jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
+            <img style={jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
           </a>
-          <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeBlock2}/>
         </div>
-        <LandingBlock3
-          block3Style={this.props.block3Style}
-          phantomFooter={this.props.phantomFooter}
-          updateRootState={this.props.updateRootState}
-        />
       </div>
     )
   }
 }
 
 export default LandingBlock2
-
-LandingBlock2.propTypes = {
-  jackOfAllStyle: PropTypes.object,
-  block3Style: PropTypes.object,
-  onResizeBlock2: PropTypes.func,
-  phantomFooter: PropTypes.object,
-  updateRootState: PropTypes.func,
-}
