@@ -33,8 +33,8 @@ class Menu extends React.Component{
           text: 'Resume'
         },
         {
-          href:'/resume',
-          text: 'Resume'
+          href:'/',
+          text: 'Home'
         }
       ]
     }
