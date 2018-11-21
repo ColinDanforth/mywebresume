@@ -3,7 +3,7 @@ import StylizedHeader from "./Header/StylizedHeader"
 import LandingPage from "./landingPageComponents/LandingPage"
 import Footer  from './footer/Footer'
 import {Route, Switch} from "react-router-dom"
-import SoftwareRoot from "./Software/SoftwareRoot"
+import SoftwarePage from "./Software/SoftwarePage"
 import Resume from "./Software/Resume"
 
 const rootPosition = {
@@ -70,7 +70,7 @@ class RootPage extends React.Component{
           <div style={this.state.phantomHeader}/>
           <Switch>
             <Route exact path='/' component={LandingPage}/>
-            <Route path='/software' component={SoftwareRoot}/>
+            <Route path='/software' component={SoftwarePage}/>
             <Route path='/resume' component={Resume}/>
           </Switch>
         </div>

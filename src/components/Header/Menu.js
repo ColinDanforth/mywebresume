@@ -21,8 +21,8 @@ class Menu extends React.Component{
     this.state={
       items: [
         {
-          href:'/resume',
-          text: 'Resume'
+          href:'/software',
+          text: 'Software Development and Dev Ops Experience'
         },
         {
           href:'/resume',
