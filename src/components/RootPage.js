@@ -72,7 +72,7 @@ class RootPage extends React.Component{
           <div style={this.state.phantomHeader}/>
           <Switch>
             <Route exact path='/' component={LandingPage}/>
-            <Route path='/resume' component={Resume }/>
+            <Route path='/resume' component={Resume}/>
           </Switch>
         </div>
         <Footer

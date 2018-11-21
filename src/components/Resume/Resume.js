@@ -1,9 +1,18 @@
 import React from 'react'
+import ColinDanforth from '../../images/Colin_Danforth_Resume.pdf'
 
 const resumeRootStyle =  {
+  position: 'absolute',
   textAlign: 'center',
   backgroundColor: '#BCC4C0',
   width: '100%',
+  height: '100%',
+}
+
+const iFrameStyle = {
+  width: '100%',
+  height: '100%',
+  border: 'none'
 }
 
 class Resume extends React.Component{
@@ -11,8 +20,7 @@ class Resume extends React.Component{
   render(){
     return(
       <div style={resumeRootStyle}>
-        <h1>Colin Danforth</h1>
-        <p>This is where you rebuild your entire resume and give some examples of the things you've done and why they're awesome. Do some shit shit brick!!</p>
+        <iframe src={ColinDanforth} style={iFrameStyle}></iframe>
       </div>
     )
   }
