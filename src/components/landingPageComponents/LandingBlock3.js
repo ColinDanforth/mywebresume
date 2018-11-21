@@ -21,8 +21,8 @@ const headerStyleMargin = {
   overflow: 'hidden',
   color: '#CFCFCF',
   fontSize: '2em',
-  marginTop: '2%',
-  marginBottom: '2%',
+  marginTop: '1%',
+  marginBottom: '1%',
 }
 
 const pStyle = {
@@ -31,8 +31,8 @@ const pStyle = {
   textAlign: 'left',
   marginLeft: '20%',
   marginRight: '20%',
-  marginTop: '2%',
-  marginBottom: '2%',
+  marginTop: '1%',
+  marginBottom: '1%',
 }
 
 class LandingBlock3 extends React.Component{
