@@ -3,6 +3,7 @@ import StylizedHeader from "./Header/StylizedHeader"
 import LandingPage from "./landingPageComponents/LandingPage"
 import Footer  from './footer/Footer'
 import Resume from "./Resume/Resume"
+import {Route, Switch} from "react-router-dom"
 
 const rootPosition = {
   position: 'flex',
@@ -27,16 +28,10 @@ class RootPage extends React.Component{
 
     this.updateRootState = this.updateRootState.bind(this)
     this.pageControl = this.pageControl.bind(this)
-    this.onHeaderResize = this.onHeaderResize.bind(this)
-    this.onResizeFooterHeight = this.onResizeFooterHeight.bind(this)
     this.onResizelandingPageBackground = this.onResizelandingPageBackground.bind(this)
     this.onResizeBlock2 = this.onResizeBlock2.bind(this)
-  }
-
-  updateRootState(input){
-    this.setState({
-      [input.name]: input.value,
-    })
+    this.onHeaderResize = this.onHeaderResize.bind(this)
+    this.onResizeFooterHeight = this.onResizeFooterHeight.bind(this)
   }
 
   onHeaderResize(width, height){
@@ -44,6 +39,22 @@ class RootPage extends React.Component{
       headerHeight: height,
     })
 
+  }
+
+  onResizeFooterHeight(width, height){
+    this.setState({
+      footerPhantom: {
+        display:'block',
+        height: height + 'px',
+      },
+    })
+  }
+
+
+  updateRootState(input){
+    this.setState({
+      [input.name]: input.value,
+    })
   }
 
   onResizelandingPageBackground(width, height){
@@ -56,15 +67,6 @@ class RootPage extends React.Component{
     console.log('jack', height)
     this.setState({
       block2Height: (height - (height* 0.02))
-    })
-  }
-
-  onResizeFooterHeight(width, height){
-    this.setState({
-      footerPhantom: {
-        display:'block',
-        height: height + 'px',
-      },
     })
   }
 
@@ -96,7 +98,23 @@ class RootPage extends React.Component{
             onHeaderResize={this.onHeaderResize}
             activeItem={this.activeItem}
           />
-          {this.pageControl()}
+          <Switch>
+            <Route exact path='/' component={() => <LandingPage
+              headerHeight={this.state.headerHeight}
+              jackOfAllPosition={this.state.landingPageHeight + this.state.headerHeight}
+              onResizelandingPageBackground={this.onResizelandingPageBackground}
+              onResizeBlock2={this.onResizeBlock2}
+              block3Position={this.state.landingPageHeight + this.state.headerHeight + this.state.block2Height}
+              phantomFooter={this.state.footerPhantom}
+              updateRootState={this.updateRootState}
+            />
+            }/>
+            <Route path='/resume' component={() => <Resume
+              headerHeight={this.state.headerHeight}
+              onResizeSection1={this.onResizeSection1}
+            />
+            }/>
+          </Switch>
         </div>
         <Footer
           onResizeFooterHeight={this.onResizeFooterHeight}

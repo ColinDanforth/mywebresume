@@ -5,11 +5,17 @@ import profileImage from "../../images/profileImage.JPG"
 import ReactResizeDetector from "react-resize-detector"
 import LandingBlock2 from "./LandingBlock2"
 
+const flexBlock1 = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+
 const profileImageStyle = {
-  position: 'relative',
-  marginLeft: '2%',
+  flexShrink: '1',
   marginTop: '1%',
-  marginBottom: '2%',
+  marginBottom: '3%',
   maxWidth: '24%',
   width: 'auto',
   height: 'auto',
@@ -17,9 +23,9 @@ const profileImageStyle = {
 }
 
 const wordCloudStyle = {
-  position: 'relative',
+  flexShrink: '1',
   marginTop: '1%',
-  marginBottom: '2%',
+  marginBottom: '3%',
   width: '50%',
   height: 'auto',
   zIndex: '-1',
@@ -39,11 +45,10 @@ class LandingPage extends React.Component{
     this.state={
       landingPageBackground: {
         position: 'absolute',
+        width: '100%',
         top: '0px',
         textAlign: 'center',
         backgroundColor: '#1B2A41',
-        width: '100%',
-        height: 'auto',
         zIndex: '-2',
       },
       jackOfAllStyle: {
@@ -63,6 +68,40 @@ class LandingPage extends React.Component{
         zIndex: '1',
       }
     }
+  }
+
+  componentWillMount(){
+    const landingPageBackground = this.state.landingPageBackground
+    const block3 = this.state.block3
+    const jackOfAll = this.state.jackOfAllStyle
+
+    this.setState({
+      landingPageBackground: {
+        position: landingPageBackground.position,
+        top: (this.props.headerHeight) + 'px',
+        textAlign: landingPageBackground.textAlign,
+        backgroundColor: landingPageBackground.backgroundColor,
+        width: landingPageBackground.width,
+        height: landingPageBackground.height,
+        zIndex: landingPageBackground.zIndex,
+      },
+      block3:{
+        position: block3.position,
+        backgroundColor: block3.backgroundColor,
+        top: this.props.block3Position + 'px',
+        textAlign: block3.textAlign,
+        width: block3.width,
+        height: block3.height,
+        zIndex: block3.zIndex,
+      },
+      jackOfAllStyle: {
+        position: jackOfAll.position,
+        top: (this.props.jackOfAllPosition) + 'px',
+        width: jackOfAll.width,
+        height: jackOfAll.height,
+        zIndex: jackOfAll.zIndex,
+      },
+    })
   }
 
   componentDidUpdate(Props){
@@ -118,8 +157,10 @@ class LandingPage extends React.Component{
       <div>
         <div className="block1" style={this.state.landingPageBackground}>
           <h1 style={headerStyle}>Programmer, Administrator, Video Game Designer, and Much More</h1>
-          <img style={profileImageStyle} src={profileImage} alt='profileImage'/>
-          <img style={wordCloudStyle} src={wordCloud} alt='wordCloud'/>
+          <div style={flexBlock1}>
+            <img style={profileImageStyle} src={profileImage} alt='profileImage'/>
+            <img style={wordCloudStyle} src={wordCloud} alt='wordCloud'/>
+          </div>
           <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizelandingPageBackground}/>
         </div>
         <LandingBlock2

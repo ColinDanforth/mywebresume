@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import menuIcon from '../../images/menuIcon.png'
-import SideMenuPanel from "./SideMenuPanel"
 import ReactResizeDetector from 'react-resize-detector'
+import Menu from "./Menu"
 
 const menuBar = {
   position: 'fixed',
@@ -12,6 +12,22 @@ const menuBar = {
   height: 'auto',
   backgroundColor: '#324A5F',
   zIndex: '20',
+}
+const menuBarFull = {
+  position: 'fixed',
+  top: '0px',
+  left: '0px',
+  width: '100%',
+  height: '100%',
+  backgroundColor: '#324A5F',
+  zIndex: '20',
+}
+
+const centerMenu = {
+  position: 'absolute',
+  left: '50%',
+  top: '50%',
+  transform: 'translate(-50%, -50%)'
 }
 
 const firstRow ={
@@ -57,7 +73,7 @@ class StylizedHeader extends React.Component{
     }
 
     this.openMenu = this.openMenu.bind(this)
-    this.navigatePages = this.navigatePages.bind(this)
+    this.hyperLinkMenu = this.hyperLinkMenu.bind(this)
   }
 
   openMenu(){
@@ -66,49 +82,45 @@ class StylizedHeader extends React.Component{
     })
   }
 
-  navigatePages(event){
-
-    const newPage={
-      name: 'activeItem',
-      value: event.currentTarget.dataset.id
-    }
-    this.props.updateRootState(newPage)
-    if(this.state.openMenu) {
-      this.openMenu()
+  hyperLinkMenu(){
+    if(this.state.openMenu){
+      return (
+        <div style={menuBarFull}>
+          <div style={firstRow}>
+            <span style={menuIconAStyle} onClick={this.openMenu}>
+              <img style={menuIconStyle} src={menuIcon} alt=""/>
+            </span>
+          </div>
+          <div style={centerMenu}>
+            <Menu/>
+          </div>
+        </div>
+      )
+    }else {
+      return (
+        <div style={menuBar}>
+          <div style={firstRow}>
+            <span style={menuIconAStyle} onClick={this.openMenu}>
+              <img style={menuIconStyle} src={menuIcon} alt=""/>
+            </span>
+            <a
+              style={h2Style}
+              href='/'
+            >
+              <h2>COLIN DANFORTH</h2>
+            </a>
+            <h3 style={h3Style}>Software Developer, Dev Ops, Game Design, Music Instructor, Martial Arts Instructor</h3>
+          </div>
+          <ReactResizeDetector handleWidth handleHeight onResize={this.props.onHeaderResize}/>
+        </div>
+      )
     }
   }
 
   render(){
     return(
-      <div style={menuBar}>
-        <div style={firstRow}>
-          <a style={menuIconAStyle} href="#menu" onClick={this.openMenu}>
-            <img style={menuIconStyle} src={menuIcon} alt=""/>
-          </a>
-          <a
-            style={h2Style}
-            href='#resume'
-            data-id=""
-            onClick={this.navigatePages}
-          >
-            <h2>COLIN DANFORTH</h2>
-          </a>
-          <h3 style={h3Style}>Software Developer, Dev Ops, Game Design, Music Instructor, Martial Arts Instructor</h3>
-        </div>
-        {this.state.openMenu ?
-          (
-            <div >
-              <SideMenuPanel
-                navigatePages={this.navigatePages}
-                activeItem={this.props.activeItem}
-                openMenu={this.openMenu}
-              />
-            </div>
-          )
-          :
-          (<div style={{'display': 'none'}}/>)
-        }
-        <ReactResizeDetector handleWidth handleHeight onResize={this.props.onHeaderResize}/>
+      <div>
+        {this.hyperLinkMenu()}
       </div>
     )
   }

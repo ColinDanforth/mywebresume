@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom'
 import RootPage from "./components/RootPage"
 
 class App extends Component {
   render() {
     return (
-      <RootPage/>
+      <BrowserRouter>
+        <RootPage/>
+      </BrowserRouter>
     );
   }
 }
