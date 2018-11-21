@@ -2,8 +2,9 @@ import React from 'react'
 import StylizedHeader from "./Header/StylizedHeader"
 import LandingPage from "./landingPageComponents/LandingPage"
 import Footer  from './footer/Footer'
-import Resume from "./Resume/Resume"
 import {Route, Switch} from "react-router-dom"
+import SoftwareRoot from "./Software/SoftwareRoot"
+import Resume from "./Software/Resume"
 
 const rootPosition = {
   position: 'flex',
@@ -20,9 +21,6 @@ class RootPage extends React.Component{
         display: 'block',
         height: '0px'
       },
-      landingPageHeight: 0,
-      block2Height: 0,
-      activeItem: '',
       phantomFooter: {
         position: 'relative',
         bottom: '0px',
@@ -72,6 +70,7 @@ class RootPage extends React.Component{
           <div style={this.state.phantomHeader}/>
           <Switch>
             <Route exact path='/' component={LandingPage}/>
+            <Route path='/software' component={SoftwareRoot}/>
             <Route path='/resume' component={Resume}/>
           </Switch>
         </div>

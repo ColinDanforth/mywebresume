@@ -11,7 +11,7 @@ export default [
       "in software development. I work for LoyaltyOne and have been working " +
       "towards certs in dev ops technologies within AWS. Click this box to look at my resume.",
     title: 'Web Service Design, Dev ops',
-    link: '/resume'
+    link: '/software'
   },
   {
     pageName: 'videogame',

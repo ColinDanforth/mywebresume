@@ -4,54 +4,62 @@ import PropTypes from 'prop-types'
 
 const footerStyle = {
   position: 'fixed',
-  display: 'inline-block',
   backgroundColor: '#000000',
   bottom: 0,
   width: '100%',
   zIndex: 10,
 }
 
-const leftTextStyle = {
+const flexDiv = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+
+}
+
+const textStyle = {
   color: '#DDDDDD',
-  fontSize: '0.8em',
-  margin: '3px',
-  float: 'right',
+  margin: '0px',
 }
 
-const rightTextStyle = {
-  color: '#DDDDDD',
-  fontSize: '0.8em',
-  margin: '3px',
-  float: 'left',
+const clickableSpan ={
+
 }
 
-const leftBlockStyle={
-  position: 'relative',
-  float: 'left',
-  width: '48%',
-  height: 'auto',
-  marginRight: '2%',
-}
-
-const rightBlockStyle={
-  position: 'relative',
-  float: 'right',
-  width: '48%',
-  height: 'auto',
-  marginLeft: '2%',
+const blockStyle={
+  display:  'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  marginLeft:'0.8%',
+  marginRight:'0.8%'
 }
 
 class Footer extends React.Component{
+  constructor(){
+    super()
+    this.clicked = this.clicked.bind(this)
+  }
+
+
+  clicked(){
+    console.log('clicked')
+  }
+
   render(){
     return (
       <div style={footerStyle}>
-        <div style={leftBlockStyle}>
-          <a style={leftTextStyle} href="mailto:colin.danforth@gmail.com?Subject=Subject" target="_newtab">colin.canforth@gmail.com</a>
-          <p style={leftTextStyle}>Email Contact:</p>
-        </div>
-        <div style={rightBlockStyle}>
-          <p style={rightTextStyle}>Phone Contact:</p>
-          <p style={rightTextStyle}>416-388-4294</p>
+        <div style={flexDiv}>
+          <div style={blockStyle}>
+            <p style={textStyle}>Email Contact:</p>
+            <a style={textStyle} href="mailto:colin.danforth@gmail.com?Subject=Subject" target="_newtab">colin.canforth@gmail.com</a>
+          </div>
+          <div style={blockStyle}>
+            <p style={textStyle}>Phone Contact:</p>
+            <p style={textStyle}>416-388-4294</p>
+          </div>
+          <a href='/resume' style={blockStyle}>
+              <span style={textStyle}>View and Download my resume</span>
+          </a>
         </div>
         <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeFooterHeight}/>
       </div>
