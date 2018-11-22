@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import menuIcon from '../../images/menuIcon.png'
 import ReactResizeDetector from 'react-resize-detector'
+import homeIcon from '../../images/homeIcon.png'
 import Menu from "./Menu"
 
 const menuBar = {
@@ -34,11 +35,13 @@ const firstRow ={
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'flex-start',
+  justifyContent: 'center',
 }
 
 const menuIconAStyle={
-  marginRight: '20%',
+  position: 'fixed',
+  top: '0.5%',
+  left: '0.5%',
   maxWidth: '3.4%',
   width: 'auto',
   height: 'auto',
@@ -50,6 +53,11 @@ const menuIconStyle = {
   height: 'auto',
 }
 
+const phantomDivForMenuIcon = {
+  width: '5%',
+  height: 'auto',
+}
+
 const h2Style={
   color: '#CFCFCF',
   marginRight: '10%',
@@ -58,9 +66,16 @@ const h2Style={
   fontSize: '0.8em',
 }
 
+const homeIconStyle ={
+  maxWidth: '5%',
+  width: 'auto',
+  height: 'auto',
+  marginRight: '1%',
+}
+
 const h3Style={
+  whiteSpace: 'nowrap',
   fontSize: '0.9em',
-  // marginRight: '2%',
   textAlign: 'left',
   color: '#CFCFCF',
 }
@@ -103,11 +118,15 @@ class StylizedHeader extends React.Component{
             <span style={menuIconAStyle} onClick={this.openMenu}>
               <img style={menuIconStyle} src={menuIcon} alt=""/>
             </span>
+            <div style={phantomDivForMenuIcon}/>
             <a
               style={h2Style}
               href='/'
             >
-              <h2>COLIN DANFORTH</h2>
+              <h2>
+                <img style={homeIconStyle} src={homeIcon} alt='homeIcon'/>
+                COLIN DANFORTH
+              </h2>
             </a>
             <h3 style={h3Style}>Software Developer, Dev Ops, Game Design, Music Instructor, Martial Arts Instructor</h3>
           </div>

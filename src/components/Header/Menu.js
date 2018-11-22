@@ -6,6 +6,7 @@ const rootDiv = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
+  marginBottom: '20%',
 }
 
 const link = {
@@ -26,11 +27,15 @@ class Menu extends React.Component{
         },
         {
           href:'/resume',
-          text: 'Resume'
+          text: 'Video Game Design'
         },
         {
           href:'/resume',
-          text: 'Resume'
+          text: 'Music, My Band, and Music Instruction'
+        },
+        {
+          href:'/resume',
+          text: 'My Motorcycle and Recommendations'
         },
         {
           href:'/',
