@@ -22,10 +22,6 @@ const textStyle = {
   margin: '0px',
 }
 
-const clickableSpan ={
-
-}
-
 const blockStyle={
   display:  'flex',
   flexDirection: 'column',
@@ -35,16 +31,6 @@ const blockStyle={
 }
 
 class Footer extends React.Component{
-  constructor(){
-    super()
-    this.clicked = this.clicked.bind(this)
-  }
-
-
-  clicked(){
-    console.log('clicked')
-  }
-
   render(){
     return (
       <div style={footerStyle}>

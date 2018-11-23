@@ -20,7 +20,7 @@ export default [
       "about teaching myself software development. Always in need of solid assets I have also taught myself" +
       " 3D modelling. If you'd like to check out my current projects this is the link for you.",
     title: 'Video Game Design',
-    link: '#videogames'
+    link: '/videogamedesign'
   },
   {
     pageName: 'music' ,

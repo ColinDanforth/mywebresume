@@ -26,7 +26,7 @@ class Menu extends React.Component{
           text: 'Software Development and Dev Ops Experience'
         },
         {
-          href:'/resume',
+          href:'/videogamedesign',
           text: 'Video Game Design'
         },
         {

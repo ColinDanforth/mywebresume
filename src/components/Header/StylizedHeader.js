@@ -54,7 +54,7 @@ const menuIconStyle = {
 }
 
 const phantomDivForMenuIcon = {
-  width: '5%',
+  width: '10%',
   height: 'auto',
 }
 
