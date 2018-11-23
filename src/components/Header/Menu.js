@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const rootDiv = {
+const componentDiv = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  marginBottom: '20%',
 }
 
 const link = {
+  whiteSpace: 'nowrap',
   color: '#CFCFCF',
   position: 'relative',
   fontSize: '2em',
@@ -46,7 +46,7 @@ class Menu extends React.Component{
   }
   render(){
     return(
-      <div style={rootDiv}>
+      <div style={componentDiv}>
         {this.state.items.map((item, i) => {return(
             <a
               key={i}

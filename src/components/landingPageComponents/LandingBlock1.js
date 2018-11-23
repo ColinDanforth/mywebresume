@@ -3,6 +3,9 @@ import profileImage from "../../images/profileImage.JPG"
 import wordCloud from "../../images/myWordCloud.png"
 
 const block1Style = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
   textAlign: 'center'
 }
 
@@ -14,10 +17,9 @@ const flexBlock1 = {
 }
 
 const profileImageStyle = {
-  flexShrink: '1',
   marginTop: '1%',
   marginBottom: '3%',
-  maxWidth: '24%',
+  maxWidth: '350px',
   width: 'auto',
   height: 'auto',
 }
@@ -26,7 +28,7 @@ const wordCloudStyle = {
   flexShrink: '1',
   marginTop: '1%',
   marginBottom: '3%',
-  width: '50%',
+  width: '650px',
   height: 'auto',
 }
 

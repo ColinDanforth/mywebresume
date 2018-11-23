@@ -48,7 +48,7 @@ const menuIconAStyle={
 }
 
 const menuIconStyle = {
-  maxWidth: '100%',
+  maxWidth: '50px',
   width: 'auto',
   height: 'auto',
 }

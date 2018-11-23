@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 
 const rootDiv = {
   display: 'flex',
-  alignItems: 'flex-start',
+  alignItems: 'center',
+  flexDirection:'row',
+  justifyContent: 'space-between',
   marginLeft: '20%',
   marginRight: '20%',
   marginTop: '2%',
@@ -13,11 +15,10 @@ const rootDiv = {
 }
 
 const imgStyle = {
-  position: 'relative',
   marginTop: '1%',
   marginBottom: '1%',
   marginLeft: '1%',
-  maxWidth: '16%',
+  maxWidth: '200px',
   width: 'auto',
   height: 'auto',
 }
@@ -33,10 +34,10 @@ const aStyle = {
 }
 
 const h1style = {
-  position: 'relative',
   textAlign: 'center',
   color: '#CFCFCF',
   width: '98%',
+  height:'auto',
 }
 
 const rootText = {
@@ -54,7 +55,9 @@ class ActivityLinks extends React.Component{
         style={aStyle}
       >
         <div style={rootDiv}>
-          <img style={imgStyle} src={this.props.activityObject.img} alt={this.props.activityObject.pageName}/>
+          <div>
+            <img style={imgStyle} src={this.props.activityObject.img} alt={this.props.activityObject.pageName}/>
+          </div>
           <div style={textDiv}>
             <h1 style={h1style}>{this.props.activityObject.title}</h1>
             <p style={rootText}>{this.props.activityObject.rootText}</p>
