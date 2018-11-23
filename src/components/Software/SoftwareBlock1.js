@@ -18,13 +18,6 @@ const headerStyle = {
   fontSize: '2em',
 }
 
-const h2Style = {
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  color: '#324A5F',
-  fontSize: '1.7em',
-}
-
 class SoftwareBlock1 extends React.Component{
   render(){
     return(

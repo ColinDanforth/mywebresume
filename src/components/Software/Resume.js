@@ -20,7 +20,7 @@ class Resume extends React.Component{
   render(){
     return(
       <div style={resumeRootStyle}>
-        <iframe src={ColinDanforth} style={iFrameStyle}></iframe>
+        <iframe title="myResume" src={ColinDanforth} style={iFrameStyle}/>
       </div>
     )
   }
