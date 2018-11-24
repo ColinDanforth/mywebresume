@@ -1,17 +1,33 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import jackOfAll from "../../images/jackofalltradesmyth.jpg"
-// import ReactResizeDetector from "react-resize-detector"
 
 const jackOfAllStyle = {
-  width: '100%',
+  marginTop: '3%',
+  marginBottom: '3%',
+  maxWidth: '1000px',
+  width: 'auto',
+  height: 'auto',
 }
+
+const rootDiv={
+  backgroundColor: '#000000',
+  width: '100%',
+  height: 'auto',
+}
+
+const flextBlock = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+
 
 class LandingBlock2 extends React.Component{
   render(){
     return(
-      <div>
-        <div>
+      <div style={rootDiv}>
+        <div style={flextBlock}>
           <a href='https://medium.muz.li/the-myth-of-the-jack-of-all-trades-master-of-none-1eb28900e7d5' rel="noreferrer noopener" target='_blank'>
             <img style={jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
           </a>

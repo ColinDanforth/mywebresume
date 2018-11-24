@@ -14,11 +14,12 @@ const h2Style = {
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   color: '#FFFFFF',
-  fontSize: '1.7em',
+  fontSize: '2em',
 }
 
 const pStyle={
-  color: '#CCCCCC'
+  color: '#CCCCCC',
+  fontSize: '1.3em',
 }
 
 class SoftwareEntry extends React.Component{
