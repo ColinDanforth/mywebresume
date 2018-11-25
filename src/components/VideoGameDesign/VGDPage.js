@@ -1,6 +1,7 @@
 import React from 'react'
 import GamesBlock1 from "./GamesBlock1"
 import GamesBlock2 from "./GameBlock2"
+import GamesBlock3 from "./GamesBlock3"
 
 const rootFlex={
   display: 'flex',
@@ -15,6 +16,7 @@ class VGDPage extends React.Component{
       <div style={rootFlex}>
         <GamesBlock1/>
         <GamesBlock2/>
+        <GamesBlock3/>
       </div>
     )
   }
