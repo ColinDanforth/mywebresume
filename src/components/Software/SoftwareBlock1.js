@@ -14,7 +14,7 @@ const block1Style = {
 const headerStyle = {
   whiteSpace: 'nowrap',
   overflow: 'hidden',
-  color: '#1B2A41',
+  color: '#FFFFFF',
   fontSize: '2em',
 }
 

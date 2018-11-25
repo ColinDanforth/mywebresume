@@ -28,7 +28,8 @@ const headerStyleMargin = {
 const pStyle = {
   color: '#CFCFCF',
   fontSize: '1em',
-  textAlign: 'left',
+  textAlign: 'justify',
+  textJustify: 'auto',
   marginLeft: '20%',
   marginRight: '20%',
   marginTop: '1%',

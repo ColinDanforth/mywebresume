@@ -11,8 +11,8 @@ const textBlock = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  width: '80%',
-  marginLeft: '10%',
+  width: '86%',
+  marginLeft: '7%',
   paddingTop:'2%',
   paddingBottom:'2%',
 }
@@ -20,10 +20,18 @@ const textBlock = {
 const flexContentBlock = {
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'space-around',
   width: '90%',
   marginLeft:'5%',
+}
+
+const flexItemColumn = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  width: '30%',
 }
 
 const headerStyle = {
@@ -36,7 +44,13 @@ const headerStyle = {
 const pStyle = {
   color: '#000000',
   fontSize: '1.3em',
-  textAlign: 'left',
+  textAlign: 'justify',
+  textJustify: 'auto',
+}
+
+const pIframeStyle = {
+  textAlign: 'justify',
+  textJustify: 'auto',
 }
 
 class GamesBlock3 extends React.Component{
@@ -46,21 +60,43 @@ class GamesBlock3 extends React.Component{
         <div style={textBlock}>
           <h2 style={headerStyle}>Game Projects</h2>
           <p style={pStyle}>
-            Below I will connect a series of YouTube videos from my youtube channel showing some of the games I've
-            worked on over the past few years. Some have been completed, some were labours of love that fankly just
-            couldn't be completed as it stands. Either way it was fun, and I'm happy to show them to you.
+            Below are soem examples from my youtube channel showing some of the games I've
+            worked on over the past few years. Some have been completed, some were labours of love that frankly just
+            couldn't be completed in a way that would satisfy my goals. Either way it was fun, and I'm happy to show
+            them to you here as examples of what can be accomplished as a self taught video game designer.
           </p>
         </div>
         <div style={flexContentBlock}>
+          <div style={flexItemColumn}>
           <iframe width="373" height='210' src="https://www.youtube.com/embed/OrLSm8fsEIs" frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen/>
+          <p style={pIframeStyle}>
+            This Game is the first VR game I ever attempted. I worked on it with another colleague from LoyaltyOne.
+            The Game was designed to be focus on a multiplayer experience for the HTC Vive. Padoru Konbatto has a
+            pretty fast moving ball component and with online game mechanics it was too difficult to make the active
+            paddle accurate due to lag for multiplayer. The host would have no issues, but the remote player saw
+            dramatic issues with aiming which unfortunately became an insurmountable issue.
+          </p>
+          </div>
+          <div style={flexItemColumn}>
           <iframe width="373" height="210" src="https://www.youtube.com/embed/SEh57tQCnDo" frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen/>
+            <p style={pIframeStyle}>
+              This video is a functional test for another VR game I worked on independantly. The level design and
+              drone design were generated, and built respectively by me. This was an excellent experience but the game
+              scale was more than I could accomplish on my own. I used this project to better understand 3d modelling
+              principals and see what kind of performance I would get from the terrain and physics interactions in unity
+              for this PC game. All in all I was very pleased with the result and carried this knowledge forward into
+              future projects.
+            </p>
+          </div>
+          <div style={flexItemColumn}>
           <iframe width="373" height="210" src="https://www.youtube.com/embed/svB8APRXcrA" frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen/>
+          </div>
         </div>
         <div style={flexContentBlock}>
         </div>

@@ -38,7 +38,8 @@ const headerStyle = {
 const pStyle = {
   color: '#000000',
   fontSize: '1.3em',
-  textAlign: 'left',
+  textAlign: 'justify',
+  textJustify: 'auto',
 }
 
 const pCommentStyle = {

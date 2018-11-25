@@ -8,7 +8,7 @@ const block1Style = {
   justifyContent: 'center',
   backgroundColor: '#000000',
   width: '100%',
-  height:'auto',
+  height: 'auto',
   paddingBottom: '2%',
 }
 
@@ -22,23 +22,6 @@ const contentBlockStyle = {
   marginLeft: '10%',
 }
 
-const editorImage = {
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '80%',
-  marginTop: '2%',
-  marginLeft: '10%',
-}
-
-const unityEditorImage={
-  maxWidth: '400px',
-  width:'auto',
-  height:'auto',
-  marginRight: '2%'
-}
-
 const imageBlock = {
   width: '30%,',
   marginRight: '3%',
@@ -46,20 +29,90 @@ const imageBlock = {
 
 const pStyle = {
   color: '#CCCCCC',
-  fontSize: '1.3em',
-  textAlign: 'left',
+  fontSize: '1.2em',
+  textAlign: 'justify',
+  textJustify: 'auto',
 }
 
 const unityImage = {
-  maxWidth: '300px',
+  maxWidth: '400px',
   width: 'auto',
-  height:'auto',
+  height: 'auto',
+}
+
+const editorImage = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
+  width: '80%',
+  marginTop: '2%',
+  marginLeft: '10%',
+  marginBottom:'2%',
+}
+
+const unityEditorImage = {
+  maxWidth: '400px',
+  width: 'auto',
+  height: 'auto',
+  marginRight: '2%',
+  cursor: 'pointer'
+}
+
+const divStyle = {
+  position: 'fixed',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'center',
+  top: '0px',
+  left: '0px',
+  width: '100%',
+  height: '100%',
+  zIndex: '33',
+  backgroundColor: '#000000'
+}
+
+const unityEditorImageFull = {
+  maxWidth: '1200px',
+  width: 'auto',
+  height: 'auto',
+  cursor: 'pointer',
 }
 
 
-class GamesBlock2 extends React.Component{
-  render(){
-    return(
+class GamesBlock2 extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      showFullScreenImage: false,
+    }
+    this.showFullScreenImage = this.showFullScreenImage.bind(this)
+    this.showImage = this.showImage.bind(this)
+  }
+
+  showImage() {
+    if (this.state.showFullScreenImage) {
+      return (
+        <div style={divStyle}>
+            <img style={unityEditorImageFull} src={UnityEditor} onClick={this.showFullScreenImage} alt='the Unity Editor'/>
+        </div>
+      )
+    } else {
+      return (
+          <img style={unityEditorImage} src={UnityEditor} onClick={this.showFullScreenImage} alt='the Unity Editor'/>
+      )
+    }
+  }
+
+  showFullScreenImage() {
+    this.setState({
+      showFullScreenImage: !this.state.showFullScreenImage
+    })
+  }
+
+  render() {
+    return (
       <div style={block1Style}>
         <div style={contentBlockStyle}>
           <div style={imageBlock}>
@@ -71,7 +124,8 @@ class GamesBlock2 extends React.Component{
             <p style={pStyle}>
               About 6 years ago I started playing around with video game development in Unity3D. If you
               aren't familiar with the platform you should absolutely
-              <a style={{'margin-left':'3px'}} href="http://unity3d.com" rel="noreferrer noopener" target='_blank'> click here</a> and checkout it out.
+              <a style={{'margin-left': '3px'}} href="http://unity3d.com" rel="noreferrer noopener"
+                 target='_blank'> click here</a> and checkout it out.
               There is a ton of great tutorials to help you learn coding for their platform, as well as how to
               place and use the features inside their editor.
             </p>
@@ -84,11 +138,14 @@ class GamesBlock2 extends React.Component{
           </div>
         </div>
         <div style={editorImage}>
-          <img style={unityEditorImage} src={UnityEditor} alt='the Unity Editor'/>
+          {this.showImage()}
           <p style={pStyle}>
             this is an example of the unity interface. It seems like a lot to take in at first, but if you're
             excited about making games... you can learn it and make great use of the powerful tools that unity gives
-            your access to.
+            your access to. If you're interested in seeing the award winning tutorials that Unity supplies for free
+            to learn how to use this tool to create awesome games
+            <a style={{'margin-left': '3px'}} href="https://unity3d.com/learn/tutorials" rel="noreferrer noopener"
+               target='_blank'> click here.</a>
           </p>
         </div>
       </div>

@@ -42,9 +42,10 @@ const h1style = {
 
 const rootText = {
   position: 'relative',
-  textAlign: 'left',
+  textAlign: 'justify',
+  textJustify: 'auto',
   color: '#CFCFCF',
-  width: '98%',
+  width: '96%',
 }
 
 class ActivityLinks extends React.Component{
