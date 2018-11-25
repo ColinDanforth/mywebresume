@@ -44,7 +44,7 @@ class Footer extends React.Component{
             <p style={textStyle}>416-388-4294</p>
           </div>
           <a href='/resume' style={blockStyle}>
-              <span style={textStyle}>View and Download my resume</span>
+              <span style={textStyle}>My Resume</span>
           </a>
         </div>
         <ReactResizeDetector handleWidth handleHeight onResize={this.props.onResizeFooterHeight}/>

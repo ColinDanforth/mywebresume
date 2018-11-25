@@ -70,6 +70,7 @@ class GamesBlock3 extends React.Component{
           <div style={flexItemColumn}>
           <iframe width="373" height='210' src="https://www.youtube.com/embed/OrLSm8fsEIs" frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  title="PadoruKonbatto"
                   allowFullScreen/>
           <p style={pIframeStyle}>
             This Game is the first VR game I ever attempted. I worked on it with another colleague from LoyaltyOne.
@@ -82,6 +83,7 @@ class GamesBlock3 extends React.Component{
           <div style={flexItemColumn}>
           <iframe width="373" height="210" src="https://www.youtube.com/embed/SEh57tQCnDo" frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  title="DroneTest"
                   allowFullScreen/>
             <p style={pIframeStyle}>
               This video is a functional test for another VR game I worked on independantly. The level design and
@@ -95,7 +97,15 @@ class GamesBlock3 extends React.Component{
           <div style={flexItemColumn}>
           <iframe width="373" height="210" src="https://www.youtube.com/embed/svB8APRXcrA" frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  title="Rivalry Low G"
                   allowFullScreen/>
+            <p style={pIframeStyle}>
+              This game is a desktop racing game I began working on independantly as well. All terrain and ship models
+              designed and implemented by me. I used substance painter for the texturing. This demo was showing the
+              multiplayer interface I loaded from a unity package. As well as the adjustable ship performance features
+              which I was working on to better strategize upgrade functionality within the game. Unfortunately the scale
+              of the game was too immense for me to complete on my own.
+            </p>
           </div>
         </div>
         <div style={flexContentBlock}>

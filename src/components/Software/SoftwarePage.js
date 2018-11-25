@@ -1,6 +1,7 @@
 import React from 'react'
 import SoftwareBlock1 from "./SoftwareBlock1"
 import coding from '../../images/coding.gif'
+import SoftwareBlock2 from "./SoftwareBlock2"
 
 
 const rootFlex={
@@ -18,6 +19,7 @@ class SoftwarePage extends React.Component{
     return(
       <div style={rootFlex}>
         <SoftwareBlock1/>
+        <SoftwareBlock2/>
       </div>
     )
   }
