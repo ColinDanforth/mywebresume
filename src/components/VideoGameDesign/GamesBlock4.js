@@ -93,11 +93,18 @@ class GamesBlock4 extends React.Component{
             its been done in such a manner that you are also able to efficiently render it in real time.
           </p>
           <p style={pStyle}>
-
+            I've been working hard at adding additional models for enemy units before I start tackling game play mechanics.
+            it's a little backwards in terms of most of the projects I've worked on, but I want to keep momentum on the
+            modelling work I've already done... and honestly it has to be done sometime, might as well get a nice chunk
+            of it done now no?
           </p>
           <p style={pStyle}>
-            I'm hoping to include a webGl version of the unity application here for you to check out. I'm still in the
-            early stages of development so I'm not sure if this will be completed by the time this site goes live.
+            I'll continue to keep this page up to date with the latest information as I build new assets and move towards
+            completing elements of the game. I'm hoping to include a webGl version of the unity application here for you
+            to check out. I'm still in the early stages of development so I'm not sure if this will be completed by the
+            time this site goes live. In any case if you're interested in collaborating on a project feel free to reach
+            out by email and we can talk about what you need or would like to do. I'm always happy to work on cool
+            projects with like minded individuals.
           </p>
         </div>
       </div>

@@ -19,15 +19,6 @@ export default [
     link: '/videogamedesign'
   },
   {
-    pageName: 'music' ,
-    img: 'https://s3.amazonaws.com/colindanforthwebresume/images/guitars.jpg',
-    rootText: "I started playing guitar when I was 8. Spent years learning and playing before I branched off" +
-      "into Bass as well. Recently I've been teaching myself the drums and starting a band with some colleagues." +
-      "I also teach guitar. If that sounds cool to you... click away.",
-    title: 'Music and Music Instruction',
-    link: '/music'
-  },
-  {
     pageName: 'martialarts',
     img: 'https://s3.amazonaws.com/colindanforthwebresume/images/fightingarts.jpg',
     rootText: "Ten years ago I started my martial journey with Wing Chun. I was bored of weight lifting and looking" +
@@ -36,5 +27,14 @@ export default [
       "train and teach through then click here.",
     title: 'Martial Studies and Instruction',
     link: '/martialarts'
-  }
+  },
+  {
+    pageName: 'music' ,
+    img: 'https://s3.amazonaws.com/colindanforthwebresume/images/guitars.jpg',
+    rootText: "I started playing guitar when I was 8. Spent years learning and playing before I branched off" +
+      "into Bass as well. Recently I've been teaching myself the drums and starting a band with some colleagues." +
+      "I also teach guitar. If that sounds cool to you... click away.",
+    title: 'Music and Music Instruction',
+    link: '/music'
+  },
 ]
