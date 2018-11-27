@@ -1,6 +1,4 @@
 import React from 'react'
-import Unity from '../../images/Unity3d.png'
-import UnityEditor from '../../images/unityeditor.jpg'
 
 const block1Style = {
   display: 'flex',
@@ -95,12 +93,12 @@ class GamesBlock2 extends React.Component {
     if (this.state.showFullScreenImage) {
       return (
         <div style={divStyle}>
-            <img style={unityEditorImageFull} src={UnityEditor} onClick={this.showFullScreenImage} alt='the Unity Editor'/>
+            <img style={unityEditorImageFull} src='https://s3.amazonaws.com/colindanforthwebresume/images/unityeditor.jpg' onClick={this.showFullScreenImage} alt='the Unity Editor'/>
         </div>
       )
     } else {
       return (
-          <img style={unityEditorImage} src={UnityEditor} onClick={this.showFullScreenImage} alt='the Unity Editor'/>
+          <img style={unityEditorImage} src='https://s3.amazonaws.com/colindanforthwebresume/images/unityeditor.jpg' onClick={this.showFullScreenImage} alt='the Unity Editor'/>
       )
     }
   }
@@ -117,7 +115,7 @@ class GamesBlock2 extends React.Component {
         <div style={contentBlockStyle}>
           <div style={imageBlock}>
             <a href="http://unity3d.com" rel="noreferrer noopener" target='_blank'>
-              <img style={unityImage} src={Unity} alt="Unity3d"/>
+              <img style={unityImage} src='https://s3.amazonaws.com/colindanforthwebresume/images/Unity3d.png' alt="Unity3d"/>
             </a>
           </div>
           <div>

@@ -1,6 +1,4 @@
 import React from 'react'
-import profileImage from "../../images/profileImage.JPG"
-import wordCloud from "../../images/myWordCloud.png"
 
 const block1Style = {
   display: 'flex',
@@ -46,8 +44,8 @@ class LandingBlock1 extends React.Component{
       <div style={block1Style}>
         <h1 style={headerStyle}>Programmer, Administrator, Video Game Designer, and Much More</h1>
         <div style={flexBlock1}>
-          <img style={profileImageStyle} src={profileImage} alt='profileImage'/>
-          <img style={wordCloudStyle} src={wordCloud} alt='wordCloud'/>
+          <img style={profileImageStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/profileImage.JPG' alt='profileImage'/>
+          <img style={wordCloudStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/myWordCloud.png' alt='wordCloud'/>
         </div>
       </div>
     )

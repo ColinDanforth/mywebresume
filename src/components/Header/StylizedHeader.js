@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import menuIcon from '../../images/menuIcon.png'
 import ReactResizeDetector from 'react-resize-detector'
-import homeIcon from '../../images/homeIcon.png'
 import Menu from "./Menu"
 
 const menuBar = {
@@ -11,7 +9,7 @@ const menuBar = {
   left: '0px',
   width: '100%',
   height: 'auto',
-  backgroundColor: '#324A5F',
+  backgroundColor: '#555555',
   zIndex: '20',
 }
 const menuBarFull = {
@@ -20,7 +18,7 @@ const menuBarFull = {
   left: '0px',
   width: '100%',
   height: '100%',
-  backgroundColor: '#324A5F',
+  backgroundColor: 'rgba(85, 85, 85, 0.9)',
   zIndex: '20',
 }
 
@@ -103,7 +101,7 @@ class StylizedHeader extends React.Component{
         <div style={menuBarFull}>
           <div style={firstRow}>
             <span style={menuIconAStyle} onClick={this.openMenu}>
-              <img style={menuIconStyle} src={menuIcon} alt=""/>
+              <img style={menuIconStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/menuIcon.png' alt=""/>
             </span>
           </div>
           <div style={centerMenu}>
@@ -116,7 +114,7 @@ class StylizedHeader extends React.Component{
         <div style={menuBar}>
           <div style={firstRow}>
             <span style={menuIconAStyle} onClick={this.openMenu}>
-              <img style={menuIconStyle} src={menuIcon} alt=""/>
+              <img style={menuIconStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/menuIcon.png' alt=""/>
             </span>
             <div style={phantomDivForMenuIcon}/>
             <a
@@ -124,7 +122,7 @@ class StylizedHeader extends React.Component{
               href='/'
             >
               <h2>
-                <img style={homeIconStyle} src={homeIcon} alt='homeIcon'/>
+                <img style={homeIconStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/homeIcon.png' alt='homeIcon'/>
                 COLIN DANFORTH
               </h2>
             </a>

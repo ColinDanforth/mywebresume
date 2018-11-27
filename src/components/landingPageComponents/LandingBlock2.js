@@ -1,5 +1,4 @@
 import React from 'react'
-import jackOfAll from "../../images/jackofalltradesmyth.jpg"
 
 const jackOfAllStyle = {
   marginTop: '3%',
@@ -29,7 +28,7 @@ class LandingBlock2 extends React.Component{
       <div style={rootDiv}>
         <div style={flextBlock}>
           <a href='https://medium.muz.li/the-myth-of-the-jack-of-all-trades-master-of-none-1eb28900e7d5' rel="noreferrer noopener" target='_blank'>
-            <img style={jackOfAllStyle} src={jackOfAll} alt='jackBackground'/>
+            <img style={jackOfAllStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/jackofalltradesmyth.jpg' alt='jackBackground'/>
           </a>
         </div>
       </div>

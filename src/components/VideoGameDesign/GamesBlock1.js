@@ -1,5 +1,4 @@
 import React from 'react'
-import NES from '../../images/nes.png'
 
 const block1Style = {
   textAlign: 'center',
@@ -9,7 +8,7 @@ const block1Style = {
   justifyContent: 'flex-start',
   width: '100%',
   height: 'auto',
-  backgroundImage: `url(${NES})`,
+  backgroundImage: `url(https://s3.amazonaws.com/colindanforthwebresume/images/nes.png)`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',

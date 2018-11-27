@@ -1,6 +1,4 @@
 import React from 'react'
-import nowWhat from '../../images/whatnow.jpg'
-import soNowWhat from '../../images/sonowwhat.jpg'
 
 const rootDiv = {
   backgroundColor: '#000000',
@@ -40,8 +38,17 @@ const soNowWhatStyle ={
   height: 'auto',
 }
 
+const merauderStyle = {
+  maxWidth: '600px',
+  width: 'auto',
+  height: 'auto',
+}
+
 const h1Style={
-  color:'#FFF'
+  fontSize: '1.8em',
+  color:'#FFF',
+  marginRight: '0.5%',
+  marginLeft: '0.5%',
 }
 
 const pStyle = {
@@ -49,6 +56,7 @@ const pStyle = {
   fontSize: '1.3em',
   textAlign: 'justify',
   textJustify: 'auto',
+  marginBottom: '3%',
 }
 
 const pCommentStyle = {
@@ -67,9 +75,9 @@ class GamesBlock4 extends React.Component{
     return(
       <div style={rootDiv}>
         <div style={block4Style}>
-          <img style={nowWhatStyle} src={nowWhat} alt='now what'/>
+          <img style={nowWhatStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/whatnow.jpg' alt='now what'/>
           <h1 style={h1Style}>What's next? Working on anything new Colin?</h1>
-          <img style={soNowWhatStyle} src={soNowWhat} alt='so Now what'/>
+          <img style={soNowWhatStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/sonowwhat.jpg' alt='so Now what'/>
         </div>
         <div style={textDiv}>
           <p style={pStyle}>Well I'm glad you asked. That was very thoughtful of you.</p>
@@ -79,9 +87,17 @@ class GamesBlock4 extends React.Component{
             challenges and taught me a lot about using Blender to make high resolution models with an exceedingly low
             poly count.
           </p>
+          <img style={merauderStyle} src='https://s3.amazonaws.com/colindanforthwebresume/images/Merauder2.png' alt='Merauder screen shot'/>
           <p style={pCommentStyle}>
             Sorry for nerding out, but its so satisfying to create a solid looking 3d model knowing full well that
             its been done in such a manner that you are also able to efficiently render it in real time.
+          </p>
+          <p style={pStyle}>
+
+          </p>
+          <p style={pStyle}>
+            I'm hoping to include a webGl version of the unity application here for you to check out. I'm still in the
+            early stages of development so I'm not sure if this will be completed by the time this site goes live.
           </p>
         </div>
       </div>

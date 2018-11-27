@@ -30,12 +30,12 @@ class Menu extends React.Component{
           text: 'Video Game Design'
         },
         {
-          href:'/resume',
-          text: 'Music, My Band, and Music Instruction'
+          href:'/martialarts',
+          text: 'My Martial Arts Journey'
         },
         {
-          href:'/resume',
-          text: 'My Motorcycle and Recommendations'
+          href:'/music',
+          text: 'Music, My Band, and Music Instruction'
         },
         {
           href:'/',

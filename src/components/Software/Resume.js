@@ -1,5 +1,4 @@
 import React from 'react'
-import ColinDanforth from '../../images/Colin_Danforth_Resume.pdf'
 
 const resumeRootStyle =  {
   position: 'absolute',
@@ -20,7 +19,7 @@ class Resume extends React.Component{
   render(){
     return(
       <div style={resumeRootStyle}>
-        <iframe title="myResume" src={ColinDanforth} style={iFrameStyle}/>
+        <iframe title="myResume" src='https://s3.amazonaws.com/colindanforthwebresume/resume/Colin_Danforth_Resume.pdf' style={iFrameStyle}/>
       </div>
     )
   }

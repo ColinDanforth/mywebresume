@@ -1,6 +1,6 @@
 import React from 'react'
 import SoftwareBlock1 from "./SoftwareBlock1"
-import coding from '../../images/coding.gif'
+import coding from '../../Gif/coding.gif'
 import SoftwareBlock2 from "./SoftwareBlock2"
 
 

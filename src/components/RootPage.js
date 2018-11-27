@@ -6,6 +6,8 @@ import {Route, Switch} from "react-router-dom"
 import SoftwarePage from "./Software/SoftwarePage"
 import Resume from "./Software/Resume"
 import VGDPage from "./VideoGameDesign/VGDPage"
+import MusicPage from "./music/MusicPage"
+import MartialArtsPage from "./martialArts/MartialArtsPage"
 
 const rootPosition = {
   position: 'flex',
@@ -73,6 +75,8 @@ class RootPage extends React.Component{
             <Route exact path='/' component={LandingPage}/>
             <Route path='/software' component={SoftwarePage}/>
             <Route path='/videogamedesign' component={VGDPage}/>
+            <Route path='/music' component={MusicPage}/>
+            <Route path='/martialarts' component={MartialArtsPage}/>
             <Route path='/resume' component={Resume}/>
           </Switch>
         </div>
